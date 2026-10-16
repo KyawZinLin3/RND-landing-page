@@ -1,0 +1,6 @@
+node_modules/
+.next/
+.railway/
+.env*
+!.env.example
+*.tsbuildinfo
