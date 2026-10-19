@@ -34,24 +34,17 @@ const complianceItems = [
 export default function CorporateHome() {
   const [menuOpen, setMenuOpen] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
-  const [pastHero, setPastHero] = useState(false);
-  const [navVisible, setNavVisible] = useState(true);
   const [activeSection, setActiveSection] = useState("#top");
   const [scrollCueVisible, setScrollCueVisible] = useState(true);
 
   useEffect(() => {
-    let previousY = window.scrollY;
     let frame = 0;
 
     const updateOnScroll = () => {
       frame = 0;
       const currentY = window.scrollY;
-      const scrollingUp = currentY < previousY;
       const atTop = currentY < 8;
-      const heroHasPassed = (heroRef.current?.getBoundingClientRect().bottom ?? 0) <= 0;
 
-      setPastHero((current) => current ? currentY > 12 : heroHasPassed);
-      setNavVisible(atTop || scrollingUp);
       const heroAtTop = (heroRef.current?.getBoundingClientRect().top ?? -1) >= -1;
       setScrollCueVisible(atTop && heroAtTop);
 
@@ -69,7 +62,6 @@ export default function CorporateHome() {
         }
       }
       setActiveSection(nextActiveSection);
-      previousY = currentY;
     };
 
     const onScroll = () => {
@@ -87,9 +79,9 @@ export default function CorporateHome() {
 
   return (
     <main id="top" className="overflow-hidden bg-white text-ink">
-      <section ref={heroRef} className={`hero-shell ${pastHero ? "z-[90]" : ""}`}>
+      <section ref={heroRef} className="hero-shell z-[90]">
         <div className="min-h-[84px] px-4 pt-4 md:min-h-[92px] md:px-7 md:pt-6">
-        <header className={`mx-auto w-full max-w-[1280px] transition-[transform,opacity] duration-500 ease-out ${pastHero ? `fixed inset-x-0 top-3 z-[100] px-4 md:px-7 ${navVisible ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-[140%] opacity-0"}` : "relative z-[80]"}`}>
+        <header className="fixed inset-x-0 top-3 z-[100] mx-auto w-full max-w-[1280px] px-4 md:px-7">
           <div className="mx-auto flex min-h-[68px] max-w-[1280px] items-center justify-between gap-3 rounded-2xl border border-white/80 bg-white/90 px-4 shadow-lg shadow-coral/8 backdrop-blur-xl md:px-6">
             <a href="#top" aria-label="Reliance and Trust home" className="flex shrink-0 items-center gap-2 font-extrabold tracking-tight">
               <span className="logo-mark">R&amp;T</span><span className="hidden sm:inline">Reliance &amp; Trust</span><span className="sm:hidden">R&amp;T</span>
@@ -242,7 +234,7 @@ export default function CorporateHome() {
         <div id="legal" className="rounded-[30px] bg-ink px-7 py-10 text-white md:px-12 md:py-14">
           <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
             <div><a href="#top" className="flex items-center gap-2 font-extrabold"><span className="logo-mark invert">R&amp;T</span><span>Reliance &amp; Trust</span></a><p className="mt-4 max-w-xs text-sm leading-6 text-white/55">Reliance and Trust Company Limited — building remittance services that connect people and communities.</p></div>
-            <FooterCol title="Company" links={[["About Us", "#about"], ["Careers", "#careers"], ["News", "#news"], ["Contact Us", "#contact"]]} />
+            <FooterCol title="Company" links={[["About Us", "/about"], ["Careers", "#careers"], ["News", "#news"], ["Contact Us", "#contact"]]} />
             <FooterCol title="Mingalarpar" links={[["How It Works", "#how-it-works"], ["Thailand → Myanmar", "#corridors"], ["App Information", "#app"], ["Future Corridors", "#corridors"]]} />
             <FooterCol title="Support" links={[["Help Center", "#faq"], ["FAQ", "#faq"], ["Contact Support", "#contact"], ["Fraud Awareness", "#legal"], ["Complaints", "#contact"]]} />
             <FooterCol title="Legal" links={[["Privacy Policy", "#legal"], ["Terms & Conditions", "#legal"], ["Compliance", "#legal"], ["Cookie Policy", "#legal"], ["Regulatory Information", "#legal"]]} />

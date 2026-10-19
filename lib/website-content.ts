@@ -66,7 +66,7 @@ export const navigation = [
   { label: "Help", href: "#faq" },
   { label: "News", href: "#news" },
   { label: "Careers", href: "#careers" },
-  { label: "About Us", href: "#about" },
+  { label: "About Us", href: "/about" },
   { label: "Contact Us", href: "#contact" },
 ];
 
