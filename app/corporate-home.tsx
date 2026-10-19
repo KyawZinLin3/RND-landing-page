@@ -36,6 +36,8 @@ export default function CorporateHome() {
   const heroRef = useRef<HTMLElement>(null);
   const [pastHero, setPastHero] = useState(false);
   const [navVisible, setNavVisible] = useState(true);
+  const [activeSection, setActiveSection] = useState("#top");
+  const [scrollCueVisible, setScrollCueVisible] = useState(true);
 
   useEffect(() => {
     let previousY = window.scrollY;
@@ -50,6 +52,23 @@ export default function CorporateHome() {
 
       setPastHero((current) => current ? currentY > 12 : heroHasPassed);
       setNavVisible(atTop || scrollingUp);
+      const heroAtTop = (heroRef.current?.getBoundingClientRect().top ?? -1) >= -1;
+      setScrollCueVisible(atTop && heroAtTop);
+
+      const activeLine = window.innerHeight * 0.36;
+      let nextActiveSection = "#top";
+      let closestSectionTop = Number.NEGATIVE_INFINITY;
+      for (const item of navigation) {
+        if (item.href === "#top") continue;
+        const target = document.getElementById(item.href.slice(1));
+        if (!target) continue;
+        const targetTop = target.getBoundingClientRect().top;
+        if (targetTop <= activeLine && targetTop > closestSectionTop) {
+          nextActiveSection = item.href;
+          closestSectionTop = targetTop;
+        }
+      }
+      setActiveSection(nextActiveSection);
       previousY = currentY;
     };
 
@@ -70,13 +89,13 @@ export default function CorporateHome() {
     <main id="top" className="overflow-hidden bg-white text-ink">
       <section ref={heroRef} className={`hero-shell ${pastHero ? "z-[90]" : ""}`}>
         <div className="min-h-[84px] px-4 pt-4 md:min-h-[92px] md:px-7 md:pt-6">
-        <header className={`mx-auto w-full max-w-[1280px] transition-[transform,opacity] duration-300 ease-out ${pastHero ? `fixed inset-x-0 top-3 z-[100] px-4 md:px-7 ${navVisible ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-[140%] opacity-0"}` : "relative z-[80]"}`}>
+        <header className={`mx-auto w-full max-w-[1280px] transition-[transform,opacity] duration-500 ease-out ${pastHero ? `fixed inset-x-0 top-3 z-[100] px-4 md:px-7 ${navVisible ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-[140%] opacity-0"}` : "relative z-[80]"}`}>
           <div className="mx-auto flex min-h-[68px] max-w-[1280px] items-center justify-between gap-3 rounded-2xl border border-white/80 bg-white/90 px-4 shadow-lg shadow-coral/8 backdrop-blur-xl md:px-6">
             <a href="#top" aria-label="Reliance and Trust home" className="flex shrink-0 items-center gap-2 font-extrabold tracking-tight">
               <span className="logo-mark">R&amp;T</span><span className="hidden sm:inline">Reliance &amp; Trust</span><span className="sm:hidden">R&amp;T</span>
             </a>
-            <nav aria-label="Main navigation" className="hidden items-center gap-x-4 gap-y-2 text-[10px] font-bold lg:flex xl:gap-x-5 xl:text-[11px]">
-              {navigation.map((item) => <a key={item.label} className="whitespace-nowrap transition-colors hover:text-coral" href={item.href}>{item.label}</a>)}
+            <nav aria-label="Main navigation" className="hidden items-center gap-x-2.5 gap-y-2 text-xs font-bold lg:flex xl:gap-x-4 xl:text-[13px]">
+              {navigation.map((item) => <a key={item.label} aria-current={activeSection === item.href ? "location" : undefined} onClick={() => setActiveSection(item.href)} className="nav-link whitespace-nowrap transition-colors hover:text-coral" href={item.href}>{item.label}</a>)}
             </nav>
             <div className="hidden shrink-0 items-center gap-3 lg:flex">
               <LanguageDropdown />
@@ -87,7 +106,7 @@ export default function CorporateHome() {
             </button>
           </div>
           {menuOpen && <nav id="mobile-navigation" aria-label="Mobile navigation" className="mx-auto mt-2 grid max-w-[1280px] gap-1 rounded-2xl border border-black/5 bg-white p-3 shadow-xl lg:hidden">
-            {navigation.map((item) => <a key={item.label} onClick={() => setMenuOpen(false)} className="rounded-xl px-3 py-3 text-sm font-bold hover:bg-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral" href={item.href}>{item.label}</a>)}
+            {navigation.map((item) => <a key={item.label} aria-current={activeSection === item.href ? "location" : undefined} onClick={() => { setActiveSection(item.href); setMenuOpen(false); }} className="nav-link rounded-xl px-3 py-3 text-sm font-bold hover:bg-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral" href={item.href}>{item.label}</a>)}
             <LanguageDropdown mobile />
             <Button className="m-2" variant="coral" asChild><a href="#mingalarpar" onClick={() => setMenuOpen(false)}>Explore Mingalarpar <ArrowRight className="size-4" /></a></Button>
           </nav>}
@@ -118,6 +137,14 @@ export default function CorporateHome() {
           </div>
         </div>
       </section>
+
+      {scrollCueVisible && <a
+        href="#trust-title"
+        aria-label="Scroll down to explore the page"
+        className="scroll-cue fixed left-1/2 z-40 grid size-16 -translate-x-1/2 place-items-center rounded-full border border-coral/15 bg-white/95 shadow-lg shadow-ink/10 backdrop-blur md:size-16"
+      >
+        <span aria-hidden="true" className="scroll-mouse"><span className="scroll-mouse-dot" /></span>
+      </a>}
 
       <section aria-labelledby="trust-title" className="section-wrap py-20 md:py-24">
         <SectionHeading title="Built on Trust" text="A responsible remittance service grounded in clear processes and customer care." id="trust-title" />
@@ -233,16 +260,49 @@ function LanguageDropdown({ mobile = false }: { mobile?: boolean }) {
 
   return <details ref={dropdownRef} className={`dropdown dropdown-end group relative z-[90] ${mobile ? "w-full" : "shrink-0"}`}>
     <summary aria-label="Choose language" aria-haspopup="menu" className={`flex cursor-pointer list-none items-center gap-2 border border-coral/10 bg-white font-bold text-ink shadow-sm transition hover:border-coral/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral/30 [&::-webkit-details-marker]:hidden ${mobile ? "w-full justify-between rounded-xl px-3 py-3 text-sm" : "rounded-full px-3.5 py-2.5 text-[11px]"}`}>
-      <Globe2 aria-hidden="true" className="size-4 text-coral" />
+      <LanguageFlag code="en" />
       <span className="flex-1 text-left">English</span>
       <ChevronDown aria-hidden="true" className="size-4 text-muted transition-transform group-open:rotate-180" />
     </summary>
     <ul role="menu" className="menu dropdown-content z-[120] mt-2 w-56 gap-1 rounded-2xl border border-coral/10 bg-white p-2 text-ink shadow-xl shadow-ink/10">
-      <li role="none"><button type="button" role="menuitemradio" aria-checked="true" onClick={closeMenu} className="flex items-center justify-between rounded-xl bg-soft px-3 py-2.5 text-sm font-bold text-ink hover:bg-soft"><span className="flex items-center gap-2"><span className="grid size-6 place-items-center rounded-full bg-white text-[9px] font-extrabold text-coral">EN</span>English</span><Check aria-hidden="true" className="size-4 text-success" /></button></li>
-      <li role="none"><button type="button" role="menuitem" disabled className="flex cursor-not-allowed items-center justify-between rounded-xl px-3 py-2.5 text-sm text-muted opacity-65"><span className="flex items-center gap-2"><span className="grid size-6 place-items-center rounded-full bg-soft text-[9px] font-extrabold">MY</span>Myanmar</span><span className="text-[9px] font-bold uppercase tracking-wide">Coming soon</span></button></li>
-      <li role="none"><button type="button" role="menuitem" disabled className="flex cursor-not-allowed items-center justify-between rounded-xl px-3 py-2.5 text-sm text-muted opacity-65"><span className="flex items-center gap-2"><span className="grid size-6 place-items-center rounded-full bg-soft text-[9px] font-extrabold">TH</span>Thai</span><span className="text-[9px] font-bold uppercase tracking-wide">Coming soon</span></button></li>
+      <li role="none"><button type="button" role="menuitemradio" aria-checked="true" onClick={closeMenu} className="flex items-center justify-between rounded-xl bg-soft px-3 py-2.5 text-sm font-bold text-ink hover:bg-soft"><span className="flex items-center gap-2"><LanguageFlag code="en" />English</span><Check aria-hidden="true" className="size-4 text-success" /></button></li>
+      <li role="none"><button type="button" role="menuitem" disabled className="flex cursor-not-allowed items-center justify-between rounded-xl px-3 py-2.5 text-sm text-muted opacity-65"><span className="flex items-center gap-2"><LanguageFlag code="my" />Myanmar</span><span className="text-[9px] font-bold uppercase tracking-wide">Coming soon</span></button></li>
+      <li role="none"><button type="button" role="menuitem" disabled className="flex cursor-not-allowed items-center justify-between rounded-xl px-3 py-2.5 text-sm text-muted opacity-65"><span className="flex items-center gap-2"><LanguageFlag code="th" />Thai</span><span className="text-[9px] font-bold uppercase tracking-wide">Coming soon</span></button></li>
     </ul>
   </details>;
+}
+
+function LanguageFlag({ code }: { code: "en" | "my" | "th" }) {
+  const isMyanmar = code === "my";
+  const isThai = code === "th";
+  return (
+    <svg aria-hidden="true" viewBox="0 0 36 24" preserveAspectRatio="xMidYMid slice" className="size-6 shrink-0 self-center overflow-hidden rounded-full shadow-sm ring-1 ring-black/10">
+      {isMyanmar ? (
+        <>
+          <rect width="36" height="8" fill="#FECB00" />
+          <rect y="8" width="36" height="8" fill="#EA2839" />
+          <rect y="16" width="36" height="8" fill="#34B233" />
+          <path d="m18 3.2 2.8 5.8 6.4.9-4.6 4.5 1.1 6.4-5.7-3-5.7 3 1.1-6.4-4.6-4.5 6.4-.9L18 3.2Z" fill="white" />
+        </>
+      ) : isThai ? (
+        <>
+          <rect width="36" height="24" fill="#A51931" />
+          <rect y="4" width="36" height="16" fill="white" />
+          <rect y="8" width="36" height="8" fill="#2D2A4A" />
+        </>
+      ) : (
+        <>
+          <rect width="36" height="24" fill="#fff" />
+          <path d="M0 0h36v2H0zm0 4h36v2H0zm0 4h36v2H0zm0 4h36v2H0zm0 4h36v2H0zm0 4h36v2H0z" fill="#C8102E" />
+          <path d="M0 0h16v13H0z" fill="#012169" />
+          <path d="m0 0 16 13M16 0 0 13" stroke="#fff" strokeWidth="3" />
+          <path d="m0 0 16 13M16 0 0 13" stroke="#C8102E" strokeWidth="1" />
+          <path d="M8 0v13M0 6.5h16" stroke="#fff" strokeWidth="4" />
+          <path d="M8 0v13M0 6.5h16" stroke="#C8102E" strokeWidth="2" />
+        </>
+      )}
+    </svg>
+  );
 }
 
 function SectionHeading({ title, text, id }: { title: string; text: string; id?: string }) {

@@ -64,7 +64,7 @@ export const navigation = [
   { label: "Mingalarpar", href: "#mingalarpar" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Help", href: "#faq" },
-  { label: "News & Announcements", href: "#news" },
+  { label: "News", href: "#news" },
   { label: "Careers", href: "#careers" },
   { label: "About Us", href: "#about" },
   { label: "Contact Us", href: "#contact" },
