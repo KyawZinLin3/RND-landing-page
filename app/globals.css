@@ -21,7 +21,7 @@ button, input, select { font: inherit; }
 @media (min-width: 768px) { .scroll-cue { bottom: 1.5rem; } }
 .nav-link { position: relative; }
 .nav-link::after { position: absolute; right: 0; bottom: 0; left: 0; height: 2px; border-radius: 999px; background: #168cf2; content: ""; transform: scaleX(0); transform-origin: left center; transition: transform .28s cubic-bezier(.22,1,.36,1); }
-.nav-link[aria-current="location"]::after, .nav-link:hover::after, .nav-link:focus-visible::after { transform: scaleX(1); }
+.nav-link[aria-current="location"]::after, .nav-link[aria-current="page"]::after, .nav-link:hover::after, .nav-link:focus-visible::after { transform: scaleX(1); }
 @media (prefers-reduced-motion: reduce) { .nav-link::after { transition: none; } }
 .scroll-mouse { display: grid; width: 28px; height: 44px; flex: 0 0 auto; place-items: start center; border: 2px solid #168cf2; border-radius: 999px; padding-top: 6px; }
 .scroll-mouse-dot { width: 5px; height: 7px; border-radius: 999px; background: #168cf2; animation: scroll-mouse-dot 1.15s ease-in-out infinite; }

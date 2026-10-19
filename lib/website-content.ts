@@ -61,13 +61,13 @@ export const faqs = [
 
 export const navigation = [
   { label: "Home", href: "#top" },
-  { label: "Mingalarpar", href: "#mingalarpar" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Help", href: "#faq" },
-  { label: "News", href: "#news" },
-  { label: "Careers", href: "#careers" },
+  { label: "Mingalarpar", href: "/mingalarpar" },
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "Help", href: "/help" },
+  { label: "News", href: "/news" },
+  { label: "Careers", href: "/careers" },
   { label: "About Us", href: "/about" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export function corridorStatusLabel(status: CorridorStatus) {

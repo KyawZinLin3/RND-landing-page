@@ -10,8 +10,9 @@ function homeHref(href: string) {
   return href.startsWith("#") ? `/${href}` : href;
 }
 
-export function SiteHeader() {
+export function SiteHeader({ activePage }: { activePage: "about" | "news" | "careers" | "contact" | "help" | "how-it-works" | "mingalarpar" }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const activeLabel = { about: "About Us", news: "News", careers: "Careers", contact: "Contact Us", help: "Help", "how-it-works": "How It Works", mingalarpar: "Mingalarpar" }[activePage];
 
   return (
     <section className="hero-shell z-[90]">
@@ -22,7 +23,10 @@ export function SiteHeader() {
               <span className="logo-mark">R&amp;T</span><span className="hidden sm:inline">Reliance &amp; Trust</span><span className="sm:hidden">R&amp;T</span>
             </Link>
             <nav aria-label="Main navigation" className="hidden items-center gap-x-2.5 gap-y-2 text-xs font-bold lg:flex xl:gap-x-4 xl:text-[13px]">
-              {navigation.map((item) => <Link key={item.label} aria-current={item.label === "About Us" ? "page" : undefined} className={`nav-link whitespace-nowrap transition-colors hover:text-coral ${item.label === "About Us" ? "text-coral" : ""}`} href={homeHref(item.href)}>{item.label}</Link>)}
+              {navigation.map((item) => {
+                const isActive = item.label === activeLabel;
+                return <Link key={item.label} aria-current={isActive ? "page" : undefined} className={`nav-link whitespace-nowrap transition-colors hover:text-coral ${isActive ? "text-coral" : ""}`} href={homeHref(item.href)}>{item.label}</Link>;
+              })}
             </nav>
             <div className="hidden shrink-0 items-center gap-3 lg:flex">
               <LanguageDropdown />
@@ -33,7 +37,10 @@ export function SiteHeader() {
             </button>
           </div>
           {menuOpen && <nav id="about-mobile-navigation" aria-label="Mobile navigation" className="mx-auto mt-2 grid max-w-[1280px] gap-1 rounded-2xl border border-black/5 bg-white p-3 shadow-xl lg:hidden">
-            {navigation.map((item) => <Link key={item.label} aria-current={item.label === "About Us" ? "page" : undefined} onClick={() => setMenuOpen(false)} className={`nav-link rounded-xl px-3 py-3 text-sm font-bold hover:bg-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral ${item.label === "About Us" ? "text-coral" : ""}`} href={homeHref(item.href)}>{item.label}</Link>)}
+            {navigation.map((item) => {
+              const isActive = item.label === activeLabel;
+              return <Link key={item.label} aria-current={isActive ? "page" : undefined} onClick={() => setMenuOpen(false)} className={`nav-link rounded-xl px-3 py-3 text-sm font-bold hover:bg-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral ${isActive ? "text-coral" : ""}`} href={homeHref(item.href)}>{item.label}</Link>;
+            })}
             <LanguageDropdown mobile />
             <Button className="m-2" variant="coral" asChild><Link href="/#mingalarpar" onClick={() => setMenuOpen(false)}>Explore Mingalarpar <ArrowRight className="size-4" /></Link></Button>
           </nav>}
@@ -48,10 +55,10 @@ export function SiteFooter() {
     <footer id="contact" className="section-wrap scroll-mt-8 pb-7">
       <div id="legal" className="rounded-[30px] bg-ink px-7 py-10 text-white md:px-12 md:py-14">
         <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
-          <div><Link href="/#top" className="flex items-center gap-2 font-extrabold"><span className="logo-mark invert">R&amp;T</span><span>Reliance &amp; Trust</span></Link><p className="mt-4 max-w-xs text-sm leading-6 text-white/55">Reliance and Trust Company Limited — building remittance services that connect people and communities.</p></div>
-          <FooterCol title="Company" links={[["About Us", "/about"], ["Careers", "/#careers"], ["News", "/#news"], ["Contact Us", "/#contact"]]} />
-          <FooterCol title="Mingalarpar" links={[["How It Works", "/#how-it-works"], ["Thailand → Myanmar", "/#corridors"], ["App Information", "/#app"], ["Future Corridors", "/#corridors"]]} />
-          <FooterCol title="Support" links={[["Help Center", "/#faq"], ["FAQ", "/#faq"], ["Contact Support", "/#contact"], ["Fraud Awareness", "/#legal"], ["Complaints", "/#contact"]]} />
+          <div><Link href="/#top" className="flex items-center gap-2 font-extrabold"><span className="logo-mark invert">R&amp;T</span><span>Reliance &amp; Trust</span></Link><p className="mt-4 max-w-xs text-sm leading-6 text-white/55">Reliance and Trust Company Limited — building remittance services that connect people and communities.</p><a href="mailto:Remittance@relianceandtrustmm.com" className="mt-3 inline-block text-sm text-white/65 transition-colors hover:text-white">Remittance@relianceandtrustmm.com</a></div>
+          <FooterCol title="Company" links={[["About Us", "/about"], ["Careers", "/careers"], ["News", "/news"], ["Contact Us", "/contact"]]} />
+          <FooterCol title="Mingalarpar" links={[["Mingalarpar App", "/mingalarpar"], ["How It Works", "/how-it-works"], ["Thailand → Myanmar", "/#corridors"], ["Future Corridors", "/#corridors"]]} />
+          <FooterCol title="Support" links={[["Help Center", "/help"], ["FAQ", "/help"], ["Contact Support", "/contact"], ["Fraud Awareness", "/#legal"], ["Complaints", "/contact"]]} />
           <FooterCol title="Legal" links={[["Privacy Policy", "/#legal"], ["Terms & Conditions", "/#legal"], ["Compliance", "/#legal"], ["Cookie Policy", "/#legal"], ["Regulatory Information", "/#legal"]]} />
         </div>
         <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/45 md:flex-row md:items-center md:justify-between"><p>© 2026 Reliance and Trust Company Limited. All rights reserved.</p><p>Business contact and regulatory details will be published when approved.</p></div>

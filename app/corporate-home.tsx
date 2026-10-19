@@ -52,7 +52,7 @@ export default function CorporateHome() {
       let nextActiveSection = "#top";
       let closestSectionTop = Number.NEGATIVE_INFINITY;
       for (const item of navigation) {
-        if (item.href === "#top") continue;
+        if (!item.href.startsWith("#") || item.href === "#top") continue;
         const target = document.getElementById(item.href.slice(1));
         if (!target) continue;
         const targetTop = target.getBoundingClientRect().top;
@@ -233,10 +233,10 @@ export default function CorporateHome() {
       <footer id="contact" className="section-wrap scroll-mt-8 pb-7">
         <div id="legal" className="rounded-[30px] bg-ink px-7 py-10 text-white md:px-12 md:py-14">
           <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
-            <div><a href="#top" className="flex items-center gap-2 font-extrabold"><span className="logo-mark invert">R&amp;T</span><span>Reliance &amp; Trust</span></a><p className="mt-4 max-w-xs text-sm leading-6 text-white/55">Reliance and Trust Company Limited — building remittance services that connect people and communities.</p></div>
-            <FooterCol title="Company" links={[["About Us", "/about"], ["Careers", "#careers"], ["News", "#news"], ["Contact Us", "#contact"]]} />
-            <FooterCol title="Mingalarpar" links={[["How It Works", "#how-it-works"], ["Thailand → Myanmar", "#corridors"], ["App Information", "#app"], ["Future Corridors", "#corridors"]]} />
-            <FooterCol title="Support" links={[["Help Center", "#faq"], ["FAQ", "#faq"], ["Contact Support", "#contact"], ["Fraud Awareness", "#legal"], ["Complaints", "#contact"]]} />
+            <div><a href="#top" className="flex items-center gap-2 font-extrabold"><span className="logo-mark invert">R&amp;T</span><span>Reliance &amp; Trust</span></a><p className="mt-4 max-w-xs text-sm leading-6 text-white/55">Reliance and Trust Company Limited — building remittance services that connect people and communities.</p><a href="mailto:Remittance@relianceandtrustmm.com" className="mt-3 inline-block text-sm text-white/65 transition-colors hover:text-white">Remittance@relianceandtrustmm.com</a></div>
+            <FooterCol title="Company" links={[["About Us", "/about"], ["Careers", "/careers"], ["News", "/news"], ["Contact Us", "/contact"]]} />
+            <FooterCol title="Mingalarpar" links={[["Mingalarpar App", "/mingalarpar"], ["How It Works", "/how-it-works"], ["Thailand → Myanmar", "#corridors"], ["Future Corridors", "#corridors"]]} />
+            <FooterCol title="Support" links={[["Help Center", "/help"], ["FAQ", "/help"], ["Contact Support", "/contact"], ["Fraud Awareness", "#legal"], ["Complaints", "/contact"]]} />
             <FooterCol title="Legal" links={[["Privacy Policy", "#legal"], ["Terms & Conditions", "#legal"], ["Compliance", "#legal"], ["Cookie Policy", "#legal"], ["Regulatory Information", "#legal"]]} />
           </div>
           <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/45 md:flex-row md:items-center md:justify-between"><p>© 2026 Reliance and Trust Company Limited. All rights reserved.</p><p>Business contact and regulatory details will be published when approved.</p></div>
