@@ -20,7 +20,7 @@ export function SiteHeader({ activePage }: { activePage: "about" | "news" | "car
         <header className="fixed inset-x-0 top-3 z-[100] mx-auto w-full max-w-[1280px] px-4 md:px-7">
           <div className="mx-auto flex min-h-[68px] max-w-[1280px] items-center justify-between gap-3 rounded-2xl border border-white/80 bg-white/90 px-4 shadow-lg shadow-coral/8 backdrop-blur-xl md:px-6">
             <Link href="/#top" aria-label="Reliance and Trust home" className="flex shrink-0 items-center gap-2 font-extrabold tracking-tight">
-              <span className="logo-mark">R&amp;T</span><span className="hidden sm:inline">Reliance &amp; Trust</span><span className="sm:hidden">R&amp;T</span>
+              <img src="/rt-logo.svg" alt="Reliance &amp; Trust" className="h-10 w-auto object-contain" />
             </Link>
             <nav aria-label="Main navigation" className="hidden items-center gap-x-2.5 gap-y-2 text-xs font-bold lg:flex xl:gap-x-4 xl:text-[13px]">
               {navigation.map((item) => {

@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <circle cx="32" cy="32" r="32" fill="#071b3a" />
-  <text x="32" y="33" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800" letter-spacing="-1.2" text-anchor="middle" dominant-baseline="central">R&amp;T</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="20" fill="#fff"/>
+  <path fill="#2d43f3" d="M14 13h29c17 0 31 12 34 28l-15 1c-2-9-8-14-17-14H29v35c-7 4-12 9-15 14V13Zm39 49C39 68 29 76 25 87h17c1-7 5-14 11-25Z"/>
+  <path fill="#39b8eb" d="M43 42h44v15H72v30H56V57H43V42Z"/>
 </svg>

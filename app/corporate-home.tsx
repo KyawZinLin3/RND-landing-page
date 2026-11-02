@@ -84,7 +84,7 @@ export default function CorporateHome() {
         <header className="fixed inset-x-0 top-3 z-[100] mx-auto w-full max-w-[1280px] px-4 md:px-7">
           <div className="mx-auto flex min-h-[68px] max-w-[1280px] items-center justify-between gap-3 rounded-2xl border border-white/80 bg-white/90 px-4 shadow-lg shadow-coral/8 backdrop-blur-xl md:px-6">
             <a href="#top" aria-label="Reliance and Trust home" className="flex shrink-0 items-center gap-2 font-extrabold tracking-tight">
-              <span className="logo-mark">R&amp;T</span><span className="hidden sm:inline">Reliance &amp; Trust</span><span className="sm:hidden">R&amp;T</span>
+              <img src="/rt-logo.svg" alt="Reliance &amp; Trust" className="h-10 w-auto object-contain" />
             </a>
             <nav aria-label="Main navigation" className="hidden items-center gap-x-2.5 gap-y-2 text-xs font-bold lg:flex xl:gap-x-4 xl:text-[13px]">
               {navigation.map((item) => <a key={item.label} aria-current={activeSection === item.href ? "location" : undefined} onClick={() => setActiveSection(item.href)} className="nav-link whitespace-nowrap transition-colors hover:text-coral" href={item.href}>{item.label}</a>)}
@@ -113,19 +113,10 @@ export default function CorporateHome() {
             <div className="mt-8 flex flex-wrap gap-3"><Button variant="coral" size="lg" asChild><a href="#mingalarpar">Explore Mingalarpar <ArrowRight className="size-4" /></a></Button><Button variant="outline" size="lg" asChild><a href="#how-it-works">How It Works</a></Button></div>
             <div className="mt-10 inline-flex items-center gap-3 rounded-full border border-coral/10 bg-white/80 px-4 py-2.5 text-xs font-bold text-ink shadow-sm"><span className="size-8 shrink-0 overflow-hidden rounded-full"><CountryFlag country="Thailand" /></span><span>Thailand</span><MoveRight className="size-4 text-coral" /><span className="size-8 shrink-0 overflow-hidden rounded-full"><CountryFlag country="Myanmar" /></span><span>Myanmar</span></div>
           </div>
-          <div className="relative mx-auto w-full max-w-[470px]">
-            <div className="absolute -inset-10 rounded-full bg-coral/15 blur-3xl" aria-hidden="true" />
-            <div className="relative mx-auto w-full max-w-[280px]">
-              <div className="relative mx-auto mt-7 aspect-[393/852] w-full max-w-[250px] overflow-hidden rounded-[44px] border-[7px] border-[#1d2635] bg-white p-4 pt-12 shadow-[0_28px_70px_rgba(7,27,58,.24)]">
-                <div aria-hidden="true" className="absolute left-1/2 top-2 z-20 h-[18px] w-[68px] -translate-x-1/2 rounded-full bg-[#101114]" />
-                <div aria-hidden="true" className="absolute left-5 right-5 top-3 flex justify-between text-[9px] font-extrabold"><span>9:41</span><span>•••</span></div>
-                <div className="flex items-center gap-2"><MingalarparLogo className="size-9 rounded-xl" /><span className="text-xs font-extrabold">Mingalarpar</span><span className="ml-auto rounded-full bg-soft px-2 py-1 text-[9px] font-bold text-coral">Coming soon</span></div>
-                <div className="mt-5 rounded-2xl bg-soft p-4"><p className="text-[10px] font-bold text-muted">Your first corridor</p><div className="mt-3 flex items-center justify-between text-sm font-extrabold"><span>Thailand</span><MoveRight className="size-4 text-coral" /><span>Myanmar</span></div><div className="mt-3 flex justify-between text-[10px] font-bold text-muted"><span>THB</span><span>MMK</span></div></div>
-                <div className="mt-3 grid grid-cols-2 gap-2"><div className="rounded-xl border border-black/5 p-3"><span className="text-[9px] font-semibold text-muted">Designed for</span><b className="mt-1 block text-[11px]">Simple steps</b></div><div className="rounded-xl border border-black/5 p-3"><span className="text-[9px] font-semibold text-muted">Built around</span><b className="mt-1 block text-[11px]">Your journey</b></div></div>
-                <div className="mt-4 rounded-full bg-ink px-4 py-3 text-center text-[11px] font-bold text-white">Mingalarpar App · Coming Soon</div>
-              </div>
-              <p className="mt-4 text-center text-[10px] leading-5 text-muted">Illustrative product preview. Features and availability will be confirmed before launch.</p>
-            </div>
+          <div className="relative mx-auto w-full max-w-[520px]">
+            <div className="absolute inset-6 rounded-full bg-coral/10 blur-3xl" aria-hidden="true" />
+            <Image src="/mingalarpar-workers-hero.png" alt="A Myanmar woman and man in Thailand happily using the Mingalarpar app, with its logo rising from their phone" width={1302} height={1208} priority className="relative mx-auto h-auto w-full max-w-[500px] object-contain drop-shadow-[0_18px_28px_rgba(7,27,58,.12)]" />
+            <div className="relative mx-auto -mt-4 w-fit rounded-full border border-coral/10 bg-white/90 px-4 py-2.5 text-[10px] font-extrabold text-ink shadow-sm"><span className="mr-2 inline-block size-2 rounded-full bg-coral align-middle" />Mingalarpar · Coming soon</div>
           </div>
         </div>
       </section>
@@ -133,7 +124,7 @@ export default function CorporateHome() {
       {scrollCueVisible && <a
         href="#trust-title"
         aria-label="Scroll down to explore the page"
-        className="scroll-cue fixed left-1/2 z-40 grid size-16 -translate-x-1/2 place-items-center rounded-full border border-coral/15 bg-white/95 shadow-lg shadow-ink/10 backdrop-blur md:size-16"
+        className="scroll-cue fixed left-1/2 z-[95] grid size-16 -translate-x-1/2 place-items-center rounded-full border border-coral/15 bg-white/95 shadow-lg shadow-ink/10 backdrop-blur md:size-16"
       >
         <span aria-hidden="true" className="scroll-mouse"><span className="scroll-mouse-dot" /></span>
       </a>}
@@ -203,7 +194,7 @@ export default function CorporateHome() {
       <section id="app" className="section-wrap scroll-mt-8 py-20 md:py-24">
         <div className="grid items-center gap-10 overflow-hidden rounded-[32px] bg-soft p-7 md:grid-cols-[1.1fr_.9fr] md:p-14">
           <div><h2 className="mt-5 text-4xl font-extrabold leading-[1.06] tracking-[-.05em] sm:text-5xl md:text-[56px]">Mingalarpar in Your Pocket</h2><p className="mt-5 max-w-xl leading-7 text-muted">Discover a convenient way to manage your remittance journey. App information and official store links will be added when available.</p><div className="mt-7 grid gap-3 sm:grid-cols-2"><CheckLine text="Account registration" /><CheckLine text="Transfer creation" /><CheckLine text="Transfer tracking" /><CheckLine text="Transaction history" /></div><div className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-4 py-3 text-xs font-extrabold text-coral shadow-sm"><span className="size-2 rounded-full bg-coral" /> Mingalarpar App — {websiteSettings.appLaunched ? "Available" : "Coming Soon"}</div></div>
-          <div className="relative mx-auto w-full max-w-[360px]"><div className="absolute inset-4 rounded-full bg-coral/15 blur-3xl" /><div className="relative mx-auto aspect-[393/852] w-full max-w-[250px] overflow-hidden rounded-[44px] border-[7px] border-[#1d2635] bg-white p-5 pt-12 shadow-[0_28px_70px_rgba(7,27,58,.24)]"><div aria-hidden="true" className="absolute left-1/2 top-2 z-20 h-[18px] w-[68px] -translate-x-1/2 rounded-full bg-[#101114]" /><div aria-hidden="true" className="absolute left-5 right-5 top-3 flex justify-between text-[9px] font-extrabold"><span>9:41</span><span>•••</span></div><MingalarparLogo className="size-12 rounded-2xl" /><h3 className="mt-4 text-xl font-extrabold">Hello, Mingalarpar</h3><p className="mt-1 text-xs text-muted">A simpler way to send money home.</p><div className="mt-6 rounded-2xl bg-soft p-4"><span className="text-[10px] font-bold text-muted">Your planned corridor</span><div className="mt-2 flex items-center justify-between text-xs font-extrabold"><span>Thailand</span><MoveRight className="size-4 text-coral" /><span>Myanmar</span></div></div><div className="mt-3 grid h-24 place-items-center rounded-2xl border border-dashed border-coral/25 text-center"><div><span className="text-xs font-bold">A clear journey</span><span className="mt-1 block text-[10px] text-muted">Details coming soon</span></div></div></div><span className="absolute -right-2 top-16 rounded-full bg-white px-4 py-2 text-[10px] font-extrabold shadow-lg">Product preview</span></div>
+          <div className="relative mx-auto w-full max-w-[360px]"><div className="absolute inset-8 rounded-full bg-coral/10 blur-3xl" /><div className="relative mx-auto w-full max-w-[230px] rounded-[34px] border-[5px] border-[#182230] bg-[#182230] p-[3px] shadow-[0_24px_60px_rgba(7,27,58,.2)]"><div className="overflow-hidden rounded-[27px] bg-white"><img src="/mingalarpar-app-preview.png" alt="Mingalarpar mobile app home screen preview" loading="lazy" decoding="async" className="block h-auto w-full" /></div></div><div className="relative mx-auto mt-5 flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[10px] font-extrabold text-ink shadow-sm"><span className="size-2 rounded-full bg-coral" />App preview · Coming soon</div><p className="relative mx-auto mt-3 max-w-[290px] text-center text-xs leading-5 text-muted">Preview of the planned app. Mingalarpar is not available to download or use yet.</p></div>
         </div>
       </section>
 

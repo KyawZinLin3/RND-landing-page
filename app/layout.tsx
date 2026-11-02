@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Reliance and Trust | Mingalarpar Remittance",
   description: "Discover Mingalarpar, the planned remittance service from Reliance and Trust Company Limited, focused on connecting Thailand and Myanmar.",
   icons: {
-    icon: "/rt-favicon.svg",
+    icon: "/rt-logo.svg",
   },
   openGraph: {
     title: "Reliance and Trust | Mingalarpar Remittance",
