@@ -214,7 +214,7 @@ export default function CorporateHome() {
       </section>
 
       <section id="careers" className="section-wrap scroll-mt-8 py-20 md:py-24">
-        <div className="flex flex-col items-start justify-between gap-8 rounded-[30px] border border-coral/10 bg-soft p-7 sm:flex-row sm:items-center md:p-10"><div className="flex items-start gap-5"><span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-white text-coral shadow-sm"><BriefcaseBusiness /></span><div><h2 className="mt-2 text-4xl font-extrabold leading-[1.06] tracking-[-.05em] sm:text-5xl md:text-[56px]">Build the Future of Remittance With Us</h2><p className="mt-3 max-w-2xl text-sm leading-6 text-muted">Join Reliance and Trust Company Limited and help build financial services that connect people and communities.</p><p className="mt-2 text-xs text-muted">Career information and openings will be published when available.</p></div></div><Button variant="outline" asChild><a href="#careers">Explore Careers <ArrowRight className="size-4" /></a></Button></div>
+        <div className="flex flex-col items-start justify-between gap-8 rounded-[30px] border border-coral/10 bg-soft p-7 sm:flex-row sm:items-center md:p-10"><div className="flex items-start gap-5"><span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-white text-coral shadow-sm"><BriefcaseBusiness /></span><div><h2 className="mt-2 text-4xl font-extrabold leading-[1.06] tracking-[-.05em] sm:text-5xl md:text-[56px]">Build the Future of Remittance With Us</h2><p className="mt-3 max-w-2xl text-sm leading-6 text-muted">Join Reliance and Trust Company Limited and help build financial services that connect people and communities.</p><p className="mt-2 text-xs text-muted">Career information and openings will be published when available.</p></div></div><Button variant="outline" size="lg" className="shrink-0 rounded-xl shadow-sm hover:shadow-md" asChild><a href="/careers">Explore Careers <ArrowRight className="size-4" /></a></Button></div>
       </section>
 
       <section className="section-wrap pb-20 pt-8 md:pb-24">
@@ -259,7 +259,7 @@ function LanguageFlag({ code }: { code: "en" | "my" | "th" }) {
   const isMyanmar = code === "my";
   const isThai = code === "th";
   return (
-    <svg aria-hidden="true" viewBox="0 0 36 24" preserveAspectRatio="xMidYMid slice" className="size-6 shrink-0 self-center overflow-hidden rounded-full shadow-sm ring-1 ring-black/10">
+    <svg aria-hidden="true" viewBox="0 0 36 24" preserveAspectRatio="xMidYMid slice" className="h-4 w-6 shrink-0 self-center overflow-hidden rounded-[3px] shadow-sm ring-1 ring-black/10">
       {isMyanmar ? (
         <>
           <rect width="36" height="8" fill="#FECB00" />
@@ -275,13 +275,13 @@ function LanguageFlag({ code }: { code: "en" | "my" | "th" }) {
         </>
       ) : (
         <>
-          <rect width="36" height="24" fill="#fff" />
-          <path d="M0 0h36v2H0zm0 4h36v2H0zm0 4h36v2H0zm0 4h36v2H0zm0 4h36v2H0zm0 4h36v2H0z" fill="#C8102E" />
-          <path d="M0 0h16v13H0z" fill="#012169" />
-          <path d="m0 0 16 13M16 0 0 13" stroke="#fff" strokeWidth="3" />
-          <path d="m0 0 16 13M16 0 0 13" stroke="#C8102E" strokeWidth="1" />
-          <path d="M8 0v13M0 6.5h16" stroke="#fff" strokeWidth="4" />
-          <path d="M8 0v13M0 6.5h16" stroke="#C8102E" strokeWidth="2" />
+          <rect width="36" height="24" fill="#012169" />
+          <path d="M0 0 36 24M36 0 0 24" stroke="white" strokeWidth="5" />
+          <path d="M0 0 36 24M36 0 0 24" stroke="#C8102E" strokeWidth="2" />
+          <path d="M0 0 36 24M36 0 0 24" stroke="#012169" strokeWidth=".8" />
+          <path d="M0 0 36 24M36 0 0 24" stroke="white" strokeWidth="1.7" />
+          <path d="M0 9h36v6H0zM15 0h6v24h-6z" fill="white" />
+          <path d="M0 10.5h36v3H0zM16.5 0h3v24h-3z" fill="#C8102E" />
         </>
       )}
     </svg>

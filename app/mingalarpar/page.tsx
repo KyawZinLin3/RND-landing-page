@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Clock3, ClipboardList, MoveRight, ScanFace, Smartphone, WalletCards } from "lucide-react";
+import { ArrowRight, Clock3, ClipboardList, ScanFace, Smartphone, WalletCards } from "lucide-react";
 import { SiteFooter, SiteHeader } from "../about/site-chrome";
 import { websiteSettings } from "@/lib/website-content";
 
@@ -54,34 +54,11 @@ export default function MingalarparPage() {
           </div>
           <div className="relative mx-auto w-full max-w-[360px]">
             <div aria-hidden="true" className="absolute inset-4 rounded-full bg-coral/15 blur-3xl" />
-            <div className="relative mx-auto aspect-[393/852] w-full max-w-[250px] overflow-hidden rounded-[44px] border-[7px] border-[#1d2635] bg-white p-5 pt-12 shadow-[0_28px_70px_rgba(7,27,58,.24)]">
-              <div aria-hidden="true" className="absolute left-1/2 top-2 z-20 h-[18px] w-[68px] -translate-x-1/2 rounded-full bg-[#101114]" />
-              <div aria-hidden="true" className="absolute left-5 right-5 top-3 flex justify-between text-[9px] font-extrabold"><span>9:41</span><span>•••</span></div>
-              <div className="flex items-center gap-3">
-                <span className="grid size-12 shrink-0 place-items-center overflow-hidden rounded-2xl border border-coral/10 bg-white shadow-sm">
-                  <Image src="/mingalarpar-logo-transparent.png" alt="" width={48} height={48} className="size-[82%] object-contain" />
-                </span>
-                <div><p className="font-extrabold">Mingalarpar</p><p className="mt-0.5 text-[10px] font-bold text-coral">{appStatus}</p></div>
-              </div>
-              <h2 className="mt-7 text-lg font-extrabold">Send money home</h2>
-              <p className="mt-1 text-[11px] leading-5 text-muted">A clear, guided transfer journey.</p>
-              <div className="mt-5 rounded-2xl bg-soft p-4">
-                <span className="text-[10px] font-bold text-muted">First planned corridor</span>
-                <div className="mt-3 flex items-center justify-between text-xs font-extrabold"><span>Thailand</span><MoveRight aria-hidden="true" className="size-4 text-coral" /><span>Myanmar</span></div>
-                <div className="mt-3 flex justify-between text-[10px] font-bold text-muted"><span>THB</span><span>MMK</span></div>
-              </div>
-              <div className="mt-4 space-y-2">
-                {["Create a transfer", "Track your transfer", "View transaction history"].map((item, index) => (
-                  <div key={item} className="flex items-center gap-3 rounded-xl border border-black/5 p-3">
-                    <span className="grid size-8 place-items-center rounded-lg bg-soft text-coral"><span className="text-[10px] font-extrabold">0{index + 1}</span></span>
-                    <span className="text-[10px] font-bold">{item}</span>
-                    <ArrowRight aria-hidden="true" className="ml-auto size-3 text-muted" />
-                  </div>
-                ))}
-              </div>
-              <div className="mt-4 rounded-full bg-ink px-4 py-3 text-center text-[10px] font-bold text-white">App preview · Subject to change</div>
+            <div className="relative mx-auto w-full max-w-[230px] rounded-[34px] border-[5px] border-[#182230] bg-[#182230] p-[3px] shadow-[0_24px_60px_rgba(7,27,58,.2)]">
+              <div className="overflow-hidden rounded-[27px] bg-white"><Image src="/mingalarpar-app-preview.png" alt="Mingalarpar mobile app home screen preview" width={320} height={690} priority className="block h-auto w-full" /></div>
             </div>
-            <p className="mt-4 text-center text-[10px] leading-5 text-muted">Illustrative product preview. Final features and availability will be confirmed before launch.</p>
+            <div className="relative mx-auto mt-5 flex w-fit items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[10px] font-extrabold text-ink shadow-sm"><span className="size-2 rounded-full bg-coral" />App preview · Coming soon</div>
+            <p className="relative mx-auto mt-3 max-w-[290px] text-center text-xs leading-5 text-muted">Preview of the planned app. Mingalarpar is not available to download or use yet.</p>
           </div>
         </div>
       </section>

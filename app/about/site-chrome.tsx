@@ -91,7 +91,7 @@ function LanguageDropdown({ mobile = false }: { mobile?: boolean }) {
 }
 
 function LanguageFlag({ code = "en" }: { code?: "en" | "my" | "th" }) {
-  return <svg aria-hidden="true" viewBox="0 0 36 24" preserveAspectRatio="xMidYMid slice" className="size-6 shrink-0 self-center overflow-hidden rounded-full shadow-sm ring-1 ring-black/10">
+  return <svg aria-hidden="true" viewBox="0 0 36 24" preserveAspectRatio="xMidYMid slice" className="h-4 w-6 shrink-0 self-center overflow-hidden rounded-[3px] shadow-sm ring-1 ring-black/10">
     {code === "my" ? <>
       <rect width="36" height="8" fill="#FECB00" />
       <rect y="8" width="36" height="8" fill="#EA2839" />
@@ -102,13 +102,13 @@ function LanguageFlag({ code = "en" }: { code?: "en" | "my" | "th" }) {
       <rect y="4" width="36" height="16" fill="white" />
       <rect y="8" width="36" height="8" fill="#2D2A4A" />
     </> : <>
-      <rect width="36" height="24" fill="#fff" />
-      <path d="M0 0h36v2H0zm0 4h36v2H0zm0 4h36v2H0zm0 4h36v2H0zm0 4h36v2H0zm0 4h36v2H0z" fill="#C8102E" />
-      <path d="M0 0h16v13H0z" fill="#012169" />
-      <path d="m0 0 16 13M16 0 0 13" stroke="#fff" strokeWidth="3" />
-      <path d="m0 0 16 13M16 0 0 13" stroke="#C8102E" strokeWidth="1" />
-      <path d="M8 0v13M0 6.5h16" stroke="#fff" strokeWidth="4" />
-      <path d="M8 0v13M0 6.5h16" stroke="#C8102E" strokeWidth="2" />
+      <rect width="36" height="24" fill="#012169" />
+      <path d="M0 0 36 24M36 0 0 24" stroke="white" strokeWidth="5" />
+      <path d="M0 0 36 24M36 0 0 24" stroke="#C8102E" strokeWidth="2" />
+      <path d="M0 0 36 24M36 0 0 24" stroke="#012169" strokeWidth=".8" />
+      <path d="M0 0 36 24M36 0 0 24" stroke="white" strokeWidth="1.7" />
+      <path d="M0 9h36v6H0zM15 0h6v24h-6z" fill="white" />
+      <path d="M0 10.5h36v3H0zM16.5 0h3v24h-3z" fill="#C8102E" />
     </>}
   </svg>;
 }

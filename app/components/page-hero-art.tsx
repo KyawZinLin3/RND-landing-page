@@ -72,17 +72,33 @@ export function PageHeroArt({ kind }: { kind: PageHeroArtKind }) {
 
 function TransferVisual() {
   return <div className="relative mt-6 rounded-[24px] bg-soft p-5 sm:p-6">
-    <div className="flex items-center justify-between">
-      <div className="grid size-14 place-items-center rounded-full border-4 border-white bg-[#e9f4ff] text-xs font-extrabold text-[#0870d1] shadow-sm">TH</div>
-      <div className="mx-3 flex flex-1 items-center"><span className="h-px flex-1 border-t border-dashed border-coral/50" /><ArrowRight aria-hidden="true" className="mx-2 size-5 text-coral" /><span className="h-px flex-1 border-t border-dashed border-coral/50" /></div>
-      <div className="grid size-14 place-items-center rounded-full border-4 border-white bg-[#fff0eb] text-xs font-extrabold text-coral shadow-sm">MM</div>
+    <div className="flex items-center justify-center gap-4 sm:gap-7">
+      <div className="flex flex-col items-center gap-2"><span className="block w-[76px] overflow-hidden rounded-xl border-[3px] border-white bg-white shadow-md"><ThailandFlag /></span><span className="text-[11px] font-extrabold text-ink">Thailand</span></div>
+      <span aria-hidden="true" className="grid size-10 shrink-0 place-items-center rounded-full bg-white text-coral shadow-sm"><ArrowRight className="size-5" /></span>
+      <div className="flex flex-col items-center gap-2"><span className="block w-[76px] overflow-hidden rounded-xl border-[3px] border-white bg-white shadow-md"><MyanmarFlag /></span><span className="text-[11px] font-extrabold text-ink">Myanmar</span></div>
     </div>
-    <div className="mt-3 flex justify-between px-1 text-[10px] font-bold text-muted"><span>Thailand</span><span>Myanmar</span></div>
     <div className="mt-5 grid grid-cols-3 gap-2">
       {["Register", "Transfer", "Receive"].map((item, index) => <div key={item} className="rounded-xl border border-white bg-white px-2 py-3 text-center"><span className="mx-auto grid size-6 place-items-center rounded-full bg-soft text-[9px] font-extrabold text-coral">0{index + 1}</span><span className="mt-2 block text-[9px] font-bold text-ink">{item}</span></div>)}
     </div>
     <p className="mt-4 text-center text-[10px] font-semibold text-muted">Planned journey · details coming soon</p>
   </div>;
+}
+
+function ThailandFlag() {
+  return <svg aria-hidden="true" viewBox="0 0 60 40" className="block h-auto w-full">
+    <rect width="60" height="40" fill="#A51931" />
+    <rect y="5" width="60" height="30" fill="#F4F5F8" />
+    <rect y="12" width="60" height="16" fill="#2D2A4A" />
+  </svg>;
+}
+
+function MyanmarFlag() {
+  return <svg aria-hidden="true" viewBox="0 0 60 40" className="block h-auto w-full">
+    <rect width="60" height="13.34" fill="#FECB00" />
+    <rect y="13.33" width="60" height="13.34" fill="#34B233" />
+    <rect y="26.66" width="60" height="13.34" fill="#EA2839" />
+    <path d="m30 5 3.8 10.7 11.4.3-8.9 7.1 3.2 11-9.5-6.5-9.5 6.5 3.2-11-8.9-7.1 11.4-.3L30 5Z" fill="white" />
+  </svg>;
 }
 
 function HelpVisual() {
