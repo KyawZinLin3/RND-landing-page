@@ -82,7 +82,7 @@ export default function CorporateHome() {
       <section ref={heroRef} className="hero-shell z-[90]">
         <div className="min-h-[84px] px-4 pt-4 md:min-h-[92px] md:px-7 md:pt-6">
         <header className="fixed inset-x-0 top-3 z-[100] mx-auto w-full max-w-[1280px] px-4 md:px-7">
-          <div className="mx-auto flex min-h-[68px] max-w-[1280px] items-center justify-between gap-3 rounded-2xl border border-white/80 bg-white/90 px-4 shadow-lg shadow-coral/8 backdrop-blur-xl md:px-6">
+          <div className="mx-auto flex min-h-[68px] max-w-[1280px] items-center justify-between gap-3 rounded-2xl border border-[#dce5ee] bg-white/95 px-4 shadow-[0_10px_32px_rgba(7,27,58,.16)] backdrop-blur-xl md:px-6">
             <a href="#top" aria-label="Reliance and Trust home" className="flex shrink-0 items-center gap-2 font-extrabold tracking-tight">
               <img src="/rt-logo.svg" alt="Reliance &amp; Trust" className="h-10 w-auto object-contain" />
             </a>
@@ -358,3 +358,4 @@ function NewsCard({ post }: { post: NewsPost }) {
 function FooterCol({ title, links }: { title: string; links: [string, string][] }) {
   return <div><p className="footer-title">{title}</p><div className="mt-4 grid gap-3">{links.map(([label, href]) => <a className="text-sm text-white/55 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral" key={label} href={href}>{label}<ChevronRight className="ml-1 inline size-3 opacity-50" /></a>)}</div></div>;
 }
+

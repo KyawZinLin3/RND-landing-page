@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BriefcaseBusiness, MapPin } from "lucide-react";
+import { BriefcaseBusiness } from "lucide-react";
 import { SiteFooter, SiteHeader } from "../about/site-chrome";
 import { PageHeroArt } from "../components/page-hero-art";
 
@@ -7,30 +7,6 @@ export const metadata: Metadata = {
   title: "Careers | Reliance and Trust",
   description: "Explore sample career opportunities at Reliance and Trust Company Limited.",
 };
-
-const sampleRoles = [
-  {
-    title: "Customer Support Associate",
-    department: "Customer Experience",
-    location: "Yangon, Myanmar",
-    type: "Full-time · Sample role",
-    summary: "Help customers get clear answers and support throughout their remittance journey.",
-  },
-  {
-    title: "Compliance Operations Associate",
-    department: "Operations",
-    location: "Yangon, Myanmar",
-    type: "Full-time · Sample role",
-    summary: "Support customer verification and the operational processes behind remittance services.",
-  },
-  {
-    title: "Product Designer",
-    department: "Digital Product",
-    location: "Yangon, Myanmar",
-    type: "Full-time · Sample role",
-    summary: "Help shape a simple, accessible digital experience for people sending money home.",
-  },
-];
 
 export default function CareersPage() {
   return (
@@ -45,28 +21,20 @@ export default function CareersPage() {
       </section>
 
       <section className="section-wrap py-14 md:py-20">
-        <div className="mb-8 max-w-2xl">
-          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Example opportunities</h2>
-          <p className="mt-3 text-sm leading-6 text-muted">These mock listings demonstrate the page layout. Confirmed openings and application details will be published here when available.</p>
-        </div>
-        <div className="grid gap-4">
-          {sampleRoles.map((role) => (
-            <article key={role.title} className="rounded-[26px] border border-black/5 bg-white p-6 shadow-[0_18px_50px_rgba(13,77,136,.06)] md:flex md:items-center md:gap-8 md:p-7">
-              <div className="grid size-12 shrink-0 place-items-center rounded-2xl bg-soft text-coral"><BriefcaseBusiness aria-hidden="true" className="size-5" /></div>
-              <div className="mt-5 min-w-0 flex-1 md:mt-0">
-                <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="text-lg font-extrabold">{role.title}</h3>
-                  <span className="rounded-full bg-soft px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide text-coral">Sample</span>
-                </div>
-                <p className="mt-1 text-xs font-bold text-muted">{role.department} · {role.type}</p>
-                <p className="mt-3 text-sm leading-6 text-muted">{role.summary}</p>
-              </div>
-              <p className="mt-5 inline-flex shrink-0 items-center gap-2 text-xs font-bold text-muted md:mt-0"><MapPin aria-hidden="true" className="size-4 text-coral" />{role.location}</p>
-            </article>
-          ))}
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-black/5 bg-white px-6 py-10 text-center shadow-[0_18px_50px_rgba(13,77,136,.06)] sm:px-10 sm:py-14">
+          <div aria-hidden="true" className="relative mx-auto grid size-28 place-items-center rounded-full bg-soft">
+            <span className="absolute left-2 top-3 size-3 rounded-full bg-[#168cf2]/25" />
+            <span className="absolute right-1 top-5 size-2 rounded-full bg-coral/35" />
+            <span className="grid size-16 place-items-center rounded-2xl bg-white text-coral shadow-md"><BriefcaseBusiness className="size-8" strokeWidth={1.7} /></span>
+            <span className="absolute bottom-2 right-1 grid size-8 place-items-center rounded-xl bg-[#168cf2] text-white shadow-sm"><svg viewBox="0 0 24 24" fill="none" className="size-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </div>
+          <p className="mt-7 text-[10px] font-extrabold uppercase tracking-[.18em] text-coral">Careers at Reliance &amp; Trust</p>
+          <h2 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl">No open positions right now</h2>
+          <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-muted">There aren’t any vacancies to share at the moment. Check back later to see future opportunities to join our team.</p>
         </div>
       </section>
       <SiteFooter />
     </main>
   );
 }
+
