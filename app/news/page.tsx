@@ -7,24 +7,6 @@ export const metadata: Metadata = {
   description: "Company updates and announcements from Reliance and Trust Company Limited.",
 };
 
-const sampleStories = [
-  {
-    category: "Mingalarpar",
-    title: "Developing a remittance service for the Thailand–Myanmar corridor",
-    excerpt: "Mingalarpar is being planned as a digital remittance service to help people in Thailand send money to loved ones in Myanmar. Service availability and launch information will be shared when confirmed.",
-  },
-  {
-    category: "Customer experience",
-    title: "Clear information throughout the transfer journey",
-    excerpt: "The planned experience is designed to show the applicable exchange rate, fees, and recipient amount before a transfer is confirmed.",
-  },
-  {
-    category: "Service updates",
-    title: "Identity verification is part of the planned service",
-    excerpt: "Mingalarpar's customer journey includes identity verification. Accepted documents and registration steps will be shared before launch.",
-  },
-];
-
 export default function NewsPage() {
   return (
     <main className="min-h-screen bg-white text-ink">
@@ -38,20 +20,19 @@ export default function NewsPage() {
       </section>
 
       <section className="section-wrap py-14 md:py-20">
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {sampleStories.map((story) => (
-            <article key={story.title} className="flex min-h-[280px] flex-col rounded-[26px] border border-black/5 bg-white p-6 shadow-[0_18px_50px_rgba(13,77,136,.07)] md:p-7">
-              <div className="flex items-center justify-between gap-3">
-                <span className="rounded-full bg-soft px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wider text-coral">{story.category}</span>
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-muted">Sample</span>
-              </div>
-              <h2 className="mt-6 text-xl font-extrabold leading-snug">{story.title}</h2>
-              <p className="mt-3 text-sm leading-6 text-muted">{story.excerpt}</p>
-            </article>
-          ))}
+        <div className="mx-auto max-w-3xl rounded-[28px] border border-black/5 bg-white px-6 py-10 text-center shadow-[0_18px_50px_rgba(13,77,136,.07)] sm:px-10 sm:py-14">
+          <div aria-hidden="true" className="relative mx-auto grid size-28 place-items-center rounded-full bg-soft">
+            <span className="absolute right-1 top-2 size-5 rounded-full bg-coral/15" />
+            <span className="grid size-16 place-items-center rounded-2xl bg-white text-coral shadow-md"><svg viewBox="0 0 24 24" fill="none" className="size-8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3.75h8l4 4v12.5H6z"/><path d="M14 3.75v4h4M9 12h6M9 15.5h6"/></svg></span>
+            <span className="absolute bottom-2 left-1 grid size-8 place-items-center rounded-xl bg-coral text-white shadow-sm"><svg viewBox="0 0 24 24" fill="none" className="size-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </div>
+          <p className="mt-7 text-[10px] font-extrabold uppercase tracking-[.18em] text-coral">News &amp; announcements</p>
+          <h2 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl">No updates just yet</h2>
+          <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-muted">We’re preparing news and announcements to share with you. Please check back soon for the latest from Reliance &amp; Trust.</p>
         </div>
       </section>
       <SiteFooter />
     </main>
   );
 }
+
