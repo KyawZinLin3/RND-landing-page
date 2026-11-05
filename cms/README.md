@@ -7,8 +7,16 @@ Strapi 5 headless CMS for content shared across the R&T landing pages. Run it as
 - **Landing Page**: name, unique slug, domain, and description. Use one record per site/brand.
 - **Article**: news or post, title, slug, excerpt, block content, cover image, author, SEO fields, and required landing page relation.
 - **Vacancy**: title, slug, location, department, employment type, summary, description, requirements, apply URL, closing date, and required landing page relation.
+- **English and Burmese**: Articles and vacancies are localized. The category and landing-page relation are shared across translations, so both language versions belong to the same site. Landing Page records themselves are shared rather than translated.
 
 Articles and vacancies support drafts and publishing. Public API access is limited to GET list/detail routes; writes remain behind authenticated Strapi admin/API access. Filter content by the related landing page when a frontend fetches it. Each frontend keeps its own custom design.
+
+### Add English and Burmese content
+
+1. In **Settings → Global Settings → Internationalization**, add Burmese (`my`) in both UAT and production. English (`en`) remains the default locale.
+2. Create or open an Article or Vacancy in English and save it.
+3. Use the locale selector to add the Burmese (`my`) translation. Publish each locale separately.
+4. The frontend can request the desired locale with `?locale=en` or `?locale=my`, and filter by the associated Landing Page.
 
 ## Local development
 

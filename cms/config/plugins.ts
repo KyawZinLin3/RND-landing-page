@@ -24,6 +24,7 @@ const deniedTypes = [
 ];
 
 const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin => ({
+  i18n: true,
   'users-permissions': {
     config: {
       jwtManagement: 'refresh',
