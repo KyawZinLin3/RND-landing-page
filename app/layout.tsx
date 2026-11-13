@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Reliance and Trust | Mingalarpar Remittance",
     description: "Discover the planned Thailand to Myanmar remittance service from Reliance and Trust Company Limited.",
     type: "website",
+    siteName: "Reliance and Trust",
     ...(siteUrl ? { url: siteUrl } : {}),
   },
   robots: indexingEnabled
@@ -26,23 +27,35 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const structuredData = siteUrl ? {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        name: "Reliance and Trust",
+        alternateName: ["Reliance and Trust Company Limited", "Reliance & Trust"],
+        url: siteUrl,
+      },
+      {
+        "@type": "Organization",
+        name: "Reliance and Trust Company Limited",
+        alternateName: "Reliance & Trust",
+        url: siteUrl,
+        logo: `${siteUrl}/rt-logo.svg`,
+        description: "Reliance and Trust Company Limited is developing Mingalarpar, a planned remittance service focused on the Thailand–Myanmar corridor.",
+        brand: { "@type": "Brand", name: "Mingalarpar" },
+      },
+    ],
+  } : null;
+
   return (
     <html lang="en" data-theme="light">
       <body className={manrope.variable}>
-        {indexingEnabled && siteUrl && (
+        {indexingEnabled && structuredData && (
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                name: "Reliance and Trust Company Limited",
-                alternateName: "Reliance & Trust",
-                url: siteUrl,
-                logo: `${siteUrl}/rt-logo.svg`,
-                description: "Reliance and Trust Company Limited is developing Mingalarpar, a planned remittance service focused on the Thailand–Myanmar corridor.",
-                brand: { "@type": "Brand", name: "Mingalarpar" },
-              }).replace(/</g, "\\u003c"),
+              __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
             }}
           />
         )}
@@ -52,4 +65,3 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     </html>
   );
 }
-
