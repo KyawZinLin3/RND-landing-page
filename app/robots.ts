@@ -5,7 +5,8 @@ export const dynamic = "force-dynamic";
 
 export default function robots(): MetadataRoute.Robots {
   if (!indexingEnabled) {
-    return { rules: { userAgent: "*", disallow: "/" } };
+    // Crawlers need to fetch each page to read its noindex metadata.
+    return { rules: { userAgent: "*", allow: "/" } };
   }
 
   return {
