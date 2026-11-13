@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
-import Analytics from "./analytics";
 import { LanguageProvider } from "./components/language-provider";
 import { indexingEnabled, siteUrl } from "@/lib/site-seo";
 
@@ -47,7 +46,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           />
         )}
         <LanguageProvider>{children}</LanguageProvider>
-        <Analytics />
       </body>
     </html>
   );
