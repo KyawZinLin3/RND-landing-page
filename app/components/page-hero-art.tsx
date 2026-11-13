@@ -3,11 +3,8 @@ import {
   ArrowRight,
   BadgeCheck,
   BriefcaseBusiness,
-  Check,
-  CircleHelp,
   FileText,
   Mail,
-  MessageCircle,
   Newspaper,
   Send,
   ShieldCheck,
@@ -18,7 +15,7 @@ type PageHeroArtKind = "how-it-works" | "help" | "news" | "careers" | "about" | 
 
 const labels: Record<PageHeroArtKind, string> = {
   "how-it-works": "Illustration of a three-step money transfer journey from Thailand to Myanmar",
-  help: "Illustration of customer support questions and answers",
+  help: "Customer support specialist for Reliance and Trust",
   news: "Illustration of a company news and announcements article",
   careers: "Illustration of a job opportunity and a team",
   about: "Illustration representing Reliance and Trust and its company values",
@@ -26,6 +23,14 @@ const labels: Record<PageHeroArtKind, string> = {
 };
 
 export function PageHeroArt({ kind }: { kind: PageHeroArtKind }) {
+  if (kind === "help") {
+    return (
+      <figure role="img" aria-label={labels.help} className="mx-auto flex w-full max-w-[500px] items-center justify-center">
+        <img src="/help-support-person.png" alt="" className="block h-auto max-h-[440px] w-full max-w-[440px] object-contain" />
+      </figure>
+    );
+  }
+
   return (
     <figure role="img" aria-label={labels[kind]} className="relative mx-auto w-full max-w-[500px]">
       <div aria-hidden="true" className="absolute inset-[12%] rounded-full bg-[#168cf2]/10 blur-3xl" />
@@ -35,7 +40,6 @@ export function PageHeroArt({ kind }: { kind: PageHeroArtKind }) {
           <div className="flex items-center gap-3">
             <span className="grid size-11 place-items-center rounded-2xl bg-ink text-white shadow-md shadow-ink/15">
               {kind === "how-it-works" && <ArrowDownLeft className="size-5" />}
-              {kind === "help" && <CircleHelp className="size-5" />}
               {kind === "news" && <Newspaper className="size-5" />}
               {kind === "careers" && <BriefcaseBusiness className="size-5" />}
               {kind === "about" && <BadgeCheck className="size-5" />}
@@ -44,7 +48,6 @@ export function PageHeroArt({ kind }: { kind: PageHeroArtKind }) {
             <div>
               <p className="text-sm font-extrabold text-ink">
                 {kind === "how-it-works" && "Transfer journey"}
-                {kind === "help" && "Help center"}
                 {kind === "news" && "Company updates"}
                 {kind === "careers" && "Join our team"}
                 {kind === "about" && "Reliance & Trust"}
@@ -57,14 +60,13 @@ export function PageHeroArt({ kind }: { kind: PageHeroArtKind }) {
         </div>
 
         {kind === "how-it-works" && <TransferVisual />}
-        {kind === "help" && <HelpVisual />}
         {kind === "news" && <NewsVisual />}
         {kind === "careers" && <CareersVisual />}
         {kind === "about" && <AboutVisual />}
         {kind === "contact" && <ContactVisual />}
       </div>
       <span aria-hidden="true" className="absolute -bottom-4 -left-3 grid size-12 place-items-center rounded-2xl border border-white bg-white text-coral shadow-lg sm:-left-5 sm:size-14">
-        {kind === "help" ? <MessageCircle className="size-5" /> : kind === "contact" ? <Send className="size-5" /> : <ShieldCheck className="size-5" />}
+        {kind === "contact" ? <Send className="size-5" /> : <ShieldCheck className="size-5" />}
       </span>
     </figure>
   );
@@ -101,14 +103,6 @@ function MyanmarFlag() {
   </svg>;
 }
 
-function HelpVisual() {
-  return <div className="mt-6 space-y-3 rounded-[24px] bg-soft p-4 sm:p-5">
-    <div className="rounded-2xl border border-black/5 bg-white p-4 shadow-sm"><div className="flex items-start gap-3"><span className="grid size-8 shrink-0 place-items-center rounded-xl bg-soft text-coral"><CircleHelp className="size-4" /></span><div className="flex-1"><p className="text-[10px] font-extrabold text-ink">How do I get started?</p><span className="mt-2 block h-1.5 w-full rounded-full bg-[#e9eff5]" /><span className="mt-1.5 block h-1.5 w-4/5 rounded-full bg-[#e9eff5]" /></div></div></div>
-    <div className="ml-8 rounded-2xl bg-ink p-4 text-white shadow-sm"><div className="flex items-center gap-2"><Check className="size-4 text-[#71dfb3]" /><p className="text-[10px] font-bold">We’re here to help</p></div><span className="mt-2 block h-1.5 w-4/5 rounded-full bg-white/30" /><span className="mt-1.5 block h-1.5 w-3/5 rounded-full bg-white/20" /></div>
-    <div className="flex items-center justify-center gap-2 pt-1 text-[10px] font-bold text-muted"><MessageCircle className="size-4 text-coral" /> Answers for your remittance questions</div>
-  </div>;
-}
-
 function NewsVisual() {
   return <div className="mt-6 overflow-hidden rounded-[24px] border border-black/5 bg-white shadow-sm">
     <div className="relative grid h-36 place-items-center overflow-hidden bg-gradient-to-br from-[#dff3ff] via-[#eaf4ff] to-[#ffe9e3] sm:h-40"><div aria-hidden="true" className="absolute -right-5 -top-10 size-40 rounded-full border-[20px] border-white/50" /><div aria-hidden="true" className="absolute -bottom-16 -left-5 size-40 rounded-full border-[22px] border-coral/10" /><span className="relative grid size-16 place-items-center rounded-2xl bg-white text-coral shadow-lg"><FileText className="size-7" /></span><span className="absolute bottom-3 left-4 rounded-full bg-white/90 px-3 py-1.5 text-[9px] font-extrabold uppercase tracking-wider text-coral">Company update</span></div>
@@ -118,7 +112,7 @@ function NewsVisual() {
 
 function CareersVisual() {
   return <div className="mt-6 rounded-[24px] bg-soft p-4 sm:p-5">
-    <div className="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm"><div><span className="rounded-full bg-[#e8f5ff] px-2.5 py-1 text-[9px] font-extrabold text-[#0870d1]">SAMPLE OPPORTUNITY</span><p className="mt-3 text-sm font-extrabold text-ink">Customer Support Associate</p><p className="mt-1 text-[10px] font-semibold text-muted">Customer Experience · Yangon</p></div><span className="grid size-11 place-items-center rounded-2xl bg-soft text-coral"><BriefcaseBusiness className="size-5" /></span></div>
+    <div className="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm"><div><span className="rounded-full bg-[#e8f5ff] px-2.5 py-1 text-[9px] font-extrabold text-[#0870d1]">CURRENT OPENING</span><p className="mt-3 text-sm font-extrabold text-ink">Compliance &amp; AML Officer</p><p className="mt-1 text-[10px] font-semibold text-muted">Compliance · Yangon</p></div><span className="grid size-11 place-items-center rounded-2xl bg-soft text-coral"><BriefcaseBusiness className="size-5" /></span></div>
     <div className="mt-4 flex items-center justify-between rounded-2xl bg-ink p-4 text-white"><div><p className="text-[10px] font-extrabold">People make the difference</p><p className="mt-1 text-[9px] text-white/60">Build services that connect communities</p></div><div className="flex -space-x-2"><span className="grid size-8 place-items-center rounded-full border-2 border-ink bg-[#f6d5bd] text-ink"><UserRound className="size-4" /></span><span className="grid size-8 place-items-center rounded-full border-2 border-ink bg-[#b9e8ff] text-ink"><UserRound className="size-4" /></span><span className="grid size-8 place-items-center rounded-full border-2 border-ink bg-[#ffd6cb] text-ink"><UserRound className="size-4" /></span></div></div>
   </div>;
 }
@@ -126,7 +120,9 @@ function CareersVisual() {
 function AboutVisual() {
   return <div className="relative mt-6 grid min-h-[220px] place-items-center overflow-hidden rounded-[24px] bg-soft p-5">
     <div aria-hidden="true" className="absolute size-48 rounded-full border border-coral/15" /><div aria-hidden="true" className="absolute size-36 rounded-full border border-[#168cf2]/20" /><div aria-hidden="true" className="absolute h-px w-[75%] rotate-[-24deg] bg-coral/20" /><div aria-hidden="true" className="absolute h-px w-[75%] rotate-[24deg] bg-[#168cf2]/20" />
-    <div className="relative z-10 grid size-24 place-items-center rounded-full bg-ink text-center text-sm font-extrabold text-white shadow-xl shadow-ink/20">R&amp;T</div>
+    <div className="relative z-10 grid min-h-20 min-w-36 place-items-center rounded-2xl border border-white/90 bg-white px-5 py-4 shadow-xl shadow-ink/10">
+      <img src="/rt-logo.svg" alt="" className="h-12 w-auto max-w-40 object-contain" />
+    </div>
     <span className="absolute left-[12%] top-[20%] grid size-11 place-items-center rounded-2xl bg-white text-coral shadow-md"><BadgeCheck className="size-5" /></span><span className="absolute right-[12%] top-[22%] grid size-11 place-items-center rounded-2xl bg-white text-[#0870d1] shadow-md"><ShieldCheck className="size-5" /></span><span className="absolute bottom-[12%] grid size-11 place-items-center rounded-2xl bg-white text-coral shadow-md"><UserRound className="size-5" /></span>
     <p className="absolute bottom-4 left-4 rounded-full bg-white/85 px-3 py-1.5 text-[9px] font-extrabold text-muted">Trust · Care · Connection</p>
   </div>;
@@ -134,7 +130,8 @@ function AboutVisual() {
 
 function ContactVisual() {
   return <div className="mt-6 rounded-[24px] bg-soft p-4 sm:p-5">
-    <div className="rounded-2xl border border-black/5 bg-white p-4 shadow-sm"><div className="flex items-center justify-between border-b border-black/5 pb-3"><div className="flex items-center gap-2"><span className="grid size-8 place-items-center rounded-xl bg-soft text-coral"><Mail className="size-4" /></span><span className="text-[10px] font-extrabold text-ink">New message</span></div><span className="text-[9px] font-bold text-muted">Email</span></div><div className="mt-4 space-y-3"><div><p className="text-[9px] font-bold text-muted">TO</p><p className="mt-1 text-[10px] font-extrabold text-ink">Remittance@relianceandtrustmm.com</p></div><div className="rounded-xl bg-[#f5f9fd] p-3"><span className="block h-1.5 w-2/5 rounded-full bg-[#cad7e3]" /><span className="mt-2 block h-1.5 w-full rounded-full bg-[#e4ebf1]" /><span className="mt-2 block h-1.5 w-4/5 rounded-full bg-[#e4ebf1]" /></div></div><div className="mt-4 flex justify-end"><span className="inline-flex items-center gap-2 rounded-full bg-coral px-4 py-2 text-[9px] font-extrabold text-white">Send message <Send className="size-3" /></span></div></div>
+    <div className="rounded-2xl border border-black/5 bg-white p-4 shadow-sm"><div className="flex items-center justify-between border-b border-black/5 pb-3"><div className="flex items-center gap-2"><span className="grid size-8 place-items-center rounded-xl bg-soft text-coral"><Mail className="size-4" /></span><span className="text-[10px] font-extrabold text-ink">New message</span></div><span className="text-[9px] font-bold text-muted">Email</span></div><div className="mt-4 space-y-3"><div><p className="text-[9px] font-bold text-muted">TO</p><p className="mt-1 text-[10px] font-extrabold text-ink">remittance@relianceandtrustmm.com</p></div><div className="rounded-xl bg-[#f5f9fd] p-3"><span className="block h-1.5 w-2/5 rounded-full bg-[#cad7e3]" /><span className="mt-2 block h-1.5 w-full rounded-full bg-[#e4ebf1]" /><span className="mt-2 block h-1.5 w-4/5 rounded-full bg-[#e4ebf1]" /></div></div><div className="mt-4 flex justify-end"><span className="inline-flex items-center gap-2 rounded-full bg-coral px-4 py-2 text-[9px] font-extrabold text-white">Send message <Send className="size-3" /></span></div></div>
     <p className="mt-3 text-center text-[10px] font-semibold text-muted">We’d be glad to hear from you</p>
   </div>;
 }
+
