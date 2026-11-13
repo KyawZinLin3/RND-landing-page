@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { SiteFooter, SiteHeader } from "../about/site-chrome";
 import ContactForm from "./contact-form";
-import { PageHeroArt } from "../components/page-hero-art";
+import { LocalizedText } from "../components/language-provider";
 
 export const metadata: Metadata = {
   title: "Contact Us | Reliance and Trust",
@@ -11,31 +11,28 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-white text-ink">
+    <main className="site-page min-h-screen text-ink">
       <SiteHeader activePage="contact" />
       <section className="hero-shell">
-        <div className="hero-content mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-16 md:grid-cols-[1fr_.9fr] md:px-8 md:py-20">
-          <div><h1 className="max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-[-.05em] sm:text-5xl md:text-6xl">Contact Us</h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-muted md:text-lg md:leading-8">Have a question or inquiry? Send us a message or contact our team by email.</p></div>
-          <PageHeroArt kind="contact" />
-        </div>
-      </section>
-
-      <section className="section-wrap grid gap-8 py-14 md:grid-cols-[.8fr_1.2fr] md:gap-12 md:py-20">
-        <aside className="rounded-[26px] bg-soft p-6 md:p-8">
-          <span className="grid size-12 place-items-center rounded-2xl bg-white text-coral shadow-sm"><Mail aria-hidden="true" className="size-5" /></span>
-          <h2 className="mt-5 text-xl font-extrabold">Email</h2>
-          <a href="mailto:Remittance@relianceandtrustmm.com" className="mt-2 inline-block break-all text-sm font-bold text-coral underline decoration-coral/30 underline-offset-4 hover:decoration-coral">Remittance@relianceandtrustmm.com</a>
-          <p className="mt-4 text-sm leading-6 text-muted">For general questions and company inquiries, email us directly or use the message form.</p>
-        </aside>
-
-        <div className="rounded-[26px] border border-black/5 bg-white p-6 shadow-[0_18px_50px_rgba(13,77,136,.07)] md:p-8">
-          <h2 className="text-xl font-extrabold">Send us a message</h2>
-          <p className="mt-2 text-sm leading-6 text-muted">Complete the form and your email app will open with your message addressed to our team.</p>
-          <ContactForm />
+        <div className="hero-content mx-auto grid max-w-[1200px] items-start gap-8 px-5 py-12 md:grid-cols-[.82fr_1.18fr] md:gap-12 md:px-8 md:py-16">
+          <div className="contact-intro md:sticky md:top-28">
+            <span className="about-eyebrow"><Mail aria-hidden="true" className="size-4" /> <LocalizedText en="We’re here to help" my="ကူညီပေးရန် အသင့်ရှိပါသည်" /></span>
+            <h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-[-.05em] sm:text-5xl md:text-6xl"><LocalizedText en="Contact Us" my="ဆက်သွယ်ရန်" /></h1>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-muted md:text-lg md:leading-8"><LocalizedText en="Have a question or inquiry? Send us a message and our team will get back to you." my="မေးခွန်း သို့မဟုတ် စုံစမ်းလိုသည်များရှိပါက ကျွန်ုပ်တို့ထံ စာပို့ပါ။ အဖွဲ့မှ ပြန်လည်ဆက်သွယ်ပေးပါမည်။" /></p>
+            <div className="contact-info-panel mt-8 grid gap-5 rounded-[24px] p-6 md:p-7">
+              <div className="flex items-start gap-3"><span className="contact-info-icon"><Mail aria-hidden="true" className="size-5" /></span><div><h2 className="text-sm font-extrabold"><LocalizedText en="Email" my="အီးမေးလ်" /></h2><a href="mailto:remittance@relianceandtrustmm.com" className="mt-1 inline-block break-all text-sm font-semibold text-coral hover:underline">remittance@relianceandtrustmm.com</a></div></div>
+              <div className="flex items-start gap-3"><span className="contact-info-icon"><Phone aria-hidden="true" className="size-5" /></span><div><h2 className="text-sm font-extrabold"><LocalizedText en="Call us" my="ဖုန်းဆက်ရန်" /></h2><a href="tel:+959695002653" className="mt-1 block text-sm font-semibold text-coral hover:underline">+95 9 695 002 653</a><a href="tel:+9595082465" className="mt-1 block text-sm font-semibold text-coral hover:underline">+95 9 508 246 5</a></div></div>
+            </div>
+          </div>
+          <div className="contact-form-panel rounded-[28px] p-6 md:p-8">
+            <h2 className="text-xl font-extrabold"><LocalizedText en="Send us a message" my="ကျွန်ုပ်တို့ထံ စာပို့ရန်" /></h2>
+            <p className="mt-2 text-sm leading-6 text-muted"><LocalizedText en="Choose a category so we can direct your message to the right team." my="သင့်စာကို သက်ဆိုင်ရာအဖွဲ့ထံ ပေးပို့နိုင်ရန် အမျိုးအစားတစ်ခုကို ရွေးချယ်ပါ။" /></p>
+            <ContactForm />
+          </div>
         </div>
       </section>
       <SiteFooter />
     </main>
   );
 }
+
