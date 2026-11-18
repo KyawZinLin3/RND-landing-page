@@ -339,7 +339,7 @@ main.site-page .about-story-panel { position: relative; isolation: isolate; over
 /* Mingalarpar card: show the cross-border city illustration behind the logo. */
 main#top .mingalarpar-visual {
   background-color: #d7ecff;
-  background-image: linear-gradient(180deg, rgb(231 244 255 / .08), rgb(14 80 155 / .12)), url("/splash-cross-border-portrait.png");
+  background-image: linear-gradient(180deg, rgb(231 244 255 / .08), rgb(14 80 155 / .12)), url("/splash-cross-border-portrait-v2.png");
   background-position: center 78%;
   background-size: cover;
   background-repeat: no-repeat;
