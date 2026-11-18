@@ -16,4 +16,3 @@ export function FooterContactDetails() {
     </a>
   </div>;
 }
-

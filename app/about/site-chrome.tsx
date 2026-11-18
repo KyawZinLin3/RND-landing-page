@@ -14,7 +14,7 @@ function homeHref(href: string) {
 }
 
 const navLabelsMy: Record<string, string> = {
-  Home: "ပင်မ", Mingalarpar: "မင်္ဂလာပါ", "How It Works": "အလုပ်လုပ်ပုံ", Help: "အကူအညီ",
+  Home: "ပင်မ", Mingalarpar: "မင်္ဂလာပါ", "How It Works": "ငွေလွှဲလုပ်ငန်းစဉ်", Help: "အကူအညီ",
   News: "သတင်း", Careers: "အလုပ်အကိုင်", "About Us": "ကျွန်ုပ်တို့အကြောင်း", "Contact Us": "ဆက်သွယ်ရန်",
 };
 
@@ -129,4 +129,3 @@ function LanguageFlag({ code = "en" }: { code?: "en" | "my" | "th" }) {
     </>}
   </svg>;
 }
-

@@ -20,7 +20,7 @@ export default function HelpPage() {
       <section className="hero-shell">
         <div className="hero-content mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-16 md:grid-cols-[1fr_.9fr] md:px-8 md:py-20">
           <div><h1 className="max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-[-.05em] sm:text-5xl md:text-6xl"><LocalizedText en="Help &amp; FAQs" my="အကူအညီနှင့် မေးလေ့ရှိသော မေးခွန်းများ" /></h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-muted md:text-lg md:leading-8"><LocalizedText en="Find answers to common questions about our company and the planned Mingalarpar service." my="ကျွန်ုပ်တို့ကုမ္ပဏီနှင့် စီစဉ်ထားသော Mingalarpar ဝန်ဆောင်မှုအကြောင်း မေးလေ့ရှိသော မေးခွန်းများ၏ အဖြေများကို ရှာဖွေပါ။" /></p></div>
+          <p className="mt-6 max-w-2xl text-base leading-7 text-muted md:text-lg md:leading-8"><LocalizedText en="Find answers to common questions about our company and the planned Mingalarpar service." my="ကျွန်ုပ်တို့ကုမ္ပဏီနှင့် စီစဉ်ထားသော Mingalarpar ငွေလွှဲဝန်ဆောင်မှုအကြောင်း မေးလေ့ရှိသည့် မေးခွန်းများ၏ အဖြေများကို ရှာဖွေပါ။" /></p></div>
           <PageHeroArt kind="help" />
         </div>
       </section>
@@ -51,4 +51,3 @@ export default function HelpPage() {
     </main>
   );
 }
-

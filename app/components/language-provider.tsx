@@ -36,8 +36,7 @@ export function useSiteLanguage() {
   return context;
 }
 
-export function LocalizedText({ en, my }: { en: string; my: string }) {
+export function LocalizedText({ en, my }: { en: ReactNode; my: ReactNode }) {
   const { language } = useSiteLanguage();
   return <>{language === "my" ? my : en}</>;
 }
-

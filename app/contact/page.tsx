@@ -18,7 +18,7 @@ export default function ContactPage() {
           <div className="contact-intro md:sticky md:top-28">
             <span className="about-eyebrow"><Mail aria-hidden="true" className="size-4" /> <LocalizedText en="We’re here to help" my="ကူညီပေးရန် အသင့်ရှိပါသည်" /></span>
             <h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-[-.05em] sm:text-5xl md:text-6xl"><LocalizedText en="Contact Us" my="ဆက်သွယ်ရန်" /></h1>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-muted md:text-lg md:leading-8"><LocalizedText en="Have a question or inquiry? Send us a message and our team will get back to you." my="မေးခွန်း သို့မဟုတ် စုံစမ်းလိုသည်များရှိပါက ကျွန်ုပ်တို့ထံ စာပို့ပါ။ အဖွဲ့မှ ပြန်လည်ဆက်သွယ်ပေးပါမည်။" /></p>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-muted md:text-lg md:leading-8"><LocalizedText en="Have a question or inquiry? Send us a message and our team will get back to you." my="မေးခွန်းများ သို့မဟုတ် စုံစမ်းလိုသည်များရှိပါက ကျွန်ုပ်တို့ထံ စာပို့နိုင်ပါသည်။ သက်ဆိုင်ရာအဖွဲ့မှ ပြန်လည်ဆက်သွယ်ပေးပါမည်။" /></p>
             <div className="contact-info-panel mt-8 grid gap-5 rounded-[24px] p-6 md:p-7">
               <div className="flex items-start gap-3"><span className="contact-info-icon"><Mail aria-hidden="true" className="size-5" /></span><div><h2 className="text-sm font-extrabold"><LocalizedText en="Email" my="အီးမေးလ်" /></h2><a href="mailto:remittance@relianceandtrustmm.com" className="mt-1 inline-block break-all text-sm font-semibold text-coral hover:underline">remittance@relianceandtrustmm.com</a></div></div>
               <div className="flex items-start gap-3"><span className="contact-info-icon"><Phone aria-hidden="true" className="size-5" /></span><div><h2 className="text-sm font-extrabold"><LocalizedText en="Call us" my="ဖုန်းဆက်ရန်" /></h2><a href="tel:+959695002653" className="mt-1 block text-sm font-semibold text-coral hover:underline">+95 9 695 002 653</a><a href="tel:+9595082465" className="mt-1 block text-sm font-semibold text-coral hover:underline">+95 9 508 246 5</a></div></div>
@@ -35,4 +35,3 @@ export default function ContactPage() {
     </main>
   );
 }
-

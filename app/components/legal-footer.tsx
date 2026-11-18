@@ -133,4 +133,3 @@ function DocumentFooterLink({ label, documentKey }: { label: string; documentKey
     </dialog>
   </>;
 }
-

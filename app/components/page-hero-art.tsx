@@ -134,4 +134,3 @@ function ContactVisual() {
     <p className="mt-3 text-center text-[10px] font-semibold text-muted">We’d be glad to hear from you</p>
   </div>;
 }
-

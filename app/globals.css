@@ -166,6 +166,13 @@ main#top .mingalarpar-panel { border: 1px solid rgb(255 255 255 / .22); backgrou
 .mingalarpar-button { background: #fff; color: #1738d4; box-shadow: 0 12px 28px rgb(8 29 112 / .2); }
 .mingalarpar-button:hover { background: #e4f7ff; color: #1738d4; }
 .mingalarpar-visual { border: 1px solid rgb(255 255 255 / .42); box-shadow: 0 20px 48px rgb(8 29 112 / .2); }
+main#top .mingalarpar-visual {
+  background-color: #d7ecff;
+  background-image: linear-gradient(180deg, rgb(231 244 255 / .08), rgb(14 80 155 / .12)), url("/splash-cross-border-portrait-v2.png");
+  background-position: center 78%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 main#top .know-panel { position: relative; isolation: isolate; overflow: hidden; border-color: rgb(255 255 255 / .22); background: radial-gradient(circle at 84% 24%, #7dd3fc 0, transparent 31%), linear-gradient(120deg, #1738d4 0%, #2545f4 48%, #38bdf8 100%); box-shadow: 0 26px 70px rgb(37 69 244 / .24); }
 .know-panel::before { position: absolute; z-index: -1; inset: 0; background-image: radial-gradient(circle, rgb(255 255 255 / .72) 1px, transparent 1.8px); background-size: 24px 24px; content: ""; mask-image: linear-gradient(110deg, transparent 8%, #000 52%, transparent 100%); opacity: .22; pointer-events: none; }
 .know-copy { color: #fff; }
@@ -217,7 +224,7 @@ main.site-page section:not(.hero-shell) > div.corridor-feature-panel { isolation
 .corridor-feature-button:hover { background: rgb(255 255 255 / .22); }
 .corridor-feature-action { background: #fff; color: #1738d4; box-shadow: 0 10px 26px rgb(8 29 112 / .2); }
 .corridor-feature-action:hover { background: #e4f7ff; color: #1738d4; }
-main.site-page .help-callout-panel { isolation: isolate; border: 1px solid rgb(255 255 255 / .22); background: radial-gradient(ellipse at 92% 16%, rgb(125 211 252 / .5), transparent 38%), linear-gradient(120deg, #1738d4 0%, #2545f4 48%, #38bdf8 100%); box-shadow: 0 24px 60px rgb(37 69 244 / .23); }
+main.site-page .help-callout-panel { isolation: isolate; border: 1px solid rgb(255 255 255 / .22); background: radial-gradient(ellipse at 88% 8%, rgb(56 189 248 / .58), transparent 34%), radial-gradient(ellipse at 8% 100%, rgb(56 189 248 / .28), transparent 38%), linear-gradient(122deg, #1738d4 0%, #2545f4 50%, #1557dc 100%); box-shadow: 0 28px 72px rgb(37 69 244 / .22); }
 .help-illustration { position: absolute; z-index: 0; top: 50%; right: 9%; width: 176px; height: 112px; pointer-events: none; transform: translateY(-50%); }
 .help-illustration::before, .help-illustration::after { position: absolute; border: 1px solid rgb(255 255 255 / .5); content: ""; box-shadow: 0 12px 28px rgb(8 29 112 / .13); }
 .help-illustration::before { top: 0; left: 0; width: 112px; height: 76px; border-radius: 24px 24px 24px 8px; background: radial-gradient(circle at 38% 50%, #fff 0 3px, transparent 3.5px), radial-gradient(circle at 52% 50%, #fff 0 3px, transparent 3.5px), radial-gradient(circle at 66% 50%, #fff 0 3px, transparent 3.5px), rgb(255 255 255 / .18); }
@@ -333,14 +340,4 @@ main.site-page .about-story-panel { position: relative; isolation: isolate; over
   .career-drawer-header { padding: 22px 20px; }
   .career-drawer-body { padding: 22px 20px 28px; }
   .career-drawer-footer { align-items: flex-start; flex-direction: column; padding: 16px 20px max(16px, env(safe-area-inset-bottom)); }
-}
-
-
-/* Mingalarpar card: show the cross-border city illustration behind the logo. */
-main#top .mingalarpar-visual {
-  background-color: #d7ecff;
-  background-image: linear-gradient(180deg, rgb(231 244 255 / .08), rgb(14 80 155 / .12)), url("/splash-cross-border-portrait-v2.png");
-  background-position: center 78%;
-  background-size: cover;
-  background-repeat: no-repeat;
 }

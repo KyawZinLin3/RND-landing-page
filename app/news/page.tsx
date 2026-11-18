@@ -29,11 +29,10 @@ export default function NewsPage() {
           </div>
           <p className="mt-7 text-[10px] font-extrabold uppercase tracking-[.18em] text-coral"><LocalizedText en="News &amp; announcements" my="သတင်းနှင့် ကြေညာချက်များ" /></p>
           <h2 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl"><LocalizedText en="No updates just yet" my="အပ်ဒိတ်အသစ်များ မရှိသေးပါ" /></h2>
-          <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-muted"><LocalizedText en="We’re preparing news and announcements to share with you. Please check back soon for the latest from Reliance &amp; Trust." my="သင့်ထံ မျှဝေရန် သတင်းနှင့် ကြေညာချက်များကို ပြင်ဆင်နေပါသည်။ Reliance &amp; Trust ၏ နောက်ဆုံးရသတင်းများအတွက် မကြာမီ ပြန်လည်ဝင်ရောက်ကြည့်ရှုပေးပါ။" /></p>
+          <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-muted"><LocalizedText en="We’re preparing news and announcements to share with you. Please check back soon for the latest from Reliance &amp; Trust." my="မျှဝေရန် သတင်းနှင့် ကြေညာချက်များ ရှိလာသည့်အခါ ဤနေရာတွင် ဖော်ပြပေးပါမည်။ Reliance and Trust ၏ နောက်ဆုံးရသတင်းများကို သိရှိနိုင်ရန် မကြာမီ ပြန်လည်ဝင်ရောက်ကြည့်ရှုပါ။" /></p>
         </div>
       </section>
       <SiteFooter />
     </main>
   );
 }
-

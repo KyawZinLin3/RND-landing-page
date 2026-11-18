@@ -78,4 +78,3 @@ export function corridorStatusLabel(status: CorridorStatus) {
     "temporarily-unavailable": "Temporarily unavailable",
   }[status];
 }
-

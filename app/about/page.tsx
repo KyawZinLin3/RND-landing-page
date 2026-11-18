@@ -15,21 +15,21 @@ const companyPrinciples = [
     title: "Trust through compliance",
     myTitle: "စည်းမျဉ်းစည်းကမ်းနှင့်အညီ ယုံကြည်မှုတည်ဆောက်ခြင်း",
     text: "Our remittance operator status was granted by the Central Bank of Myanmar (CBM) through Announcement Letter No. FE 1/343. We apply KYC, AML, and sanctions screening to every transfer.",
-    myText: "ကျွန်ုပ်တို့သည် ဗဟိုဘဏ် (CBM) ၏ ကြေညာချက်စာ FE 1/343 ဖြင့် ငွေလွှဲလုပ်ငန်းဆောင်ရွက်ခွင့် ရရှိထားပါသည်။ ငွေလွှဲမှုတိုင်းတွင် သုံးစွဲသူအထောက်အထားစိစစ်ခြင်း၊ ငွေကြေးခဝါချမှုတိုက်ဖျက်ခြင်းနှင့် ပိတ်ဆို့အရေးယူမှု စစ်ဆေးခြင်းများကို ဆောင်ရွက်ပါသည်။",
+    myText: "ကျွန်ုပ်တို့သည် ဗဟိုဘဏ် (CBM) ၏ ရုံးစာအမှတ် FE 1/343 နှင့် သက်ဆိုင်သော ခွင့်ပြုချက်ရရှိထားပါသည်။ ဖောက်သည်အထောက်အထားစိစစ်ခြင်း၊ ငွေကြေးခဝါချမှုနှင့် အကြမ်းဖက်မှုကို ငွေကြေးထောက်ပံ့ခြင်း တားဆီးကာကွယ်ရေးဆိုင်ရာ စိစစ်မှုများအပါအဝင် လိုအပ်သော လုပ်ငန်းစဉ်များကို သက်ဆိုင်ရာ ဥပဒေ၊ နည်းဥပဒေ၊ စည်းမျဉ်း၊ လုပ်ထုံးလုပ်နည်းနှင့် ညွှန်ကြားချက်များနှင့်အညီ ဆောင်ရွက်ရန် ရည်ရွယ်ထားပါသည်။",
   },
   {
     icon: <Eye aria-hidden="true" className="size-5" />,
     title: "Transparency in pricing",
     myTitle: "စျေးနှုန်းဆိုင်ရာ ပွင့်လင်းမြင်သာမှု",
     text: "We show the exchange rate, fee, and recipient amount before you confirm. No hidden margins, no surprises.",
-    myText: "အတည်မပြုမီ ငွေလဲနှုန်း၊ ငွေလွှဲခနှင့် လက်ခံသူရရှိမည့် ပမာဏကို ဖော်ပြပေးပါသည်။ ဖုံးကွယ်ထားသော အပိုကြေးများ မရှိပါ။",
+    myText: "ငွေလွှဲမှုကို အတည်မပြုမီ ငွေလဲနှုန်း၊ ငွေလွှဲဝန်ဆောင်ခနှင့် လက်ခံသူရရှိမည့် ငွေပမာဏတို့ကို ရှင်းလင်းစွာ ဖော်ပြပေးမည်ဖြစ်ပါသည်။",
   },
   {
     icon: <HeartHandshake aria-hidden="true" className="size-5" />,
     title: "Care for community",
     myTitle: "လူမှုအသိုင်းအဝိုင်းကို အလေးထားခြင်း",
     text: "Mingalarpar is built with Myanmar communities in mind — from language to payout methods to support.",
-    myText: "Mingalarpar ကို မြန်မာလူမှုအသိုင်းအဝိုင်းများ၏ လိုအပ်ချက်များကို ထည့်သွင်းစဉ်းစား၍ ဘာသာစကား၊ ငွေလက်ခံနည်းလမ်းများနှင့် အကူအညီပေးမှုတို့အထိ စီစဉ်တည်ဆောက်ထားပါသည်။",
+    myText: "Mingalarpar ကို မြန်မာလူမှုအသိုင်းအဝိုင်းများ၏ လိုအပ်ချက်များကို ထည့်သွင်းစဉ်းစား၍ ဘာသာစကား၊ ငွေလက်ခံနည်းလမ်းနှင့် အကူအညီပေးမှုတို့ကို အလေးထားကာ စီစဉ်တည်ဆောက်နေပါသည်။",
   },
   {
     icon: <Globe2 aria-hidden="true" className="size-5" />,
@@ -50,7 +50,7 @@ export default function AboutPage() {
           <div>
             <span className="about-eyebrow"><BadgeCheck aria-hidden="true" className="size-4" /> <LocalizedText en="CBM-granted remittance operator status" my="ဗဟိုဘဏ် (CBM) မှ ခွင့်ပြုထားသော ငွေလွှဲလုပ်ငန်းဆောင်ရွက်ခွင့်" /></span>
             <h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-[-.05em] sm:text-5xl md:text-6xl"><LocalizedText en="About Reliance and Trust" my="Reliance and Trust အကြောင်း" /></h1>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-muted md:text-lg md:leading-8"><LocalizedText en="Reliance and Trust Company Limited has remittance operator status granted by the Central Bank of Myanmar (CBM) through Announcement Letter No. FE 1/343, and is building services that connect people and communities across borders." my="Reliance and Trust Company Limited သည် ဗဟိုဘဏ် (CBM) ၏ ကြေညာချက်စာ FE 1/343 ဖြင့် ငွေလွှဲလုပ်ငန်းဆောင်ရွက်ခွင့် ရရှိထားပြီး နယ်စပ်ဖြတ်ကျော်၍ လူပုဂ္ဂိုလ်များနှင့် လူမှုအသိုင်းအဝိုင်းများကို ချိတ်ဆက်ပေးမည့် ဝန်ဆောင်မှုများကို တည်ဆောက်လျက်ရှိပါသည်။" /></p>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-muted md:text-lg md:leading-8"><LocalizedText en="Reliance and Trust Company Limited has remittance operator status granted by the Central Bank of Myanmar (CBM) through Announcement Letter No. FE 1/343, and is building services that connect people and communities across borders." my="Reliance and Trust Company Limited သည် ဗဟိုဘဏ် (CBM) ၏ ရုံးစာအမှတ် FE 1/343 နှင့် သက်ဆိုင်သော ခွင့်ပြုချက်ရရှိထားပြီး နယ်စပ်ဖြတ်ကျော် ငွေလွှဲဝန်ဆောင်မှုများကို တာဝန်ယူမှုရှိစွာ တည်ဆောက်လျက်ရှိပါသည်။" /></p>
           </div>
           <PageHeroArt kind="about" />
         </div>
@@ -63,9 +63,9 @@ export default function AboutPage() {
             <h2 className="mt-3 text-3xl font-extrabold tracking-[-.04em] sm:text-4xl"><LocalizedText en="Reliability earned. Trust built." my="ယုံကြည်စိတ်ချရမှုကို ရရှိစေပြီး ယုံကြည်မှုကို တည်ဆောက်ပါသည်။" /></h2>
           </div>
           <div className="about-story-copy mt-7 grid gap-x-12 gap-y-5 md:grid-cols-2">
-            <p><LocalizedText en="Our name reflects what we believe a remittance service should be built on: reliability that customers can depend on, and trust earned through transparency, compliance, and care. Our remittance operator status was granted by the Central Bank of Myanmar (CBM) through Announcement Letter No. FE 1/343. We apply identity verification, transaction monitoring, and regulatory compliance measures across everything we do." my="ကျွန်ုပ်တို့၏ အမည်သည် ငွေလွှဲဝန်ဆောင်မှုတစ်ခုတွင် အရေးကြီးသော အခြေခံတန်ဖိုးများကို ဖော်ပြပါသည်။ သုံးစွဲသူများ အားကိုးနိုင်သည့် ယုံကြည်စိတ်ချရမှု၊ ပွင့်လင်းမြင်သာမှု၊ စည်းမျဉ်းလိုက်နာမှုနှင့် ဂရုစိုက်မှုတို့မှ ရရှိလာသော ယုံကြည်မှုတို့ဖြစ်ပါသည်။ ဗဟိုဘဏ် (CBM) ၏ ကြေညာချက်စာ FE 1/343 ဖြင့် ငွေလွှဲလုပ်ငန်းဆောင်ရွက်ခွင့် ရရှိထားပြီး ကျွန်ုပ်တို့၏လုပ်ငန်းများတွင် အထောက်အထားစိစစ်ခြင်း၊ ငွေလွှဲမှုစောင့်ကြည့်ခြင်းနှင့် စည်းမျဉ်းလိုက်နာမှုဆိုင်ရာ အစီအမံများကို ဆောင်ရွက်ပါသည်။" /></p>
-            <p><LocalizedText en="Mingalarpar, our first service, is being built for the Thailand–Myanmar corridor — one of the most important remittance routes for Myanmar families. We are designing it as a mobile-first experience that makes sending money home simple to understand and convenient to use, with clear pricing and no hidden margins." my="ကျွန်ုပ်တို့၏ ပထမဆုံးဝန်ဆောင်မှုဖြစ်သော Mingalarpar ကို မြန်မာမိသားစုများအတွက် အရေးပါသော ထိုင်း-မြန်မာ ငွေလွှဲလမ်းကြောင်းအတွက် တည်ဆောက်နေပါသည်။ နေရပ်သို့ ငွေပို့ရာတွင် နားလည်ရလွယ်ကူပြီး အသုံးပြုရအဆင်ပြေစေရန် မိုဘိုင်းကို ဦးစားပေးသည့် အတွေ့အကြုံအဖြစ် စီစဉ်ထားပြီး စျေးနှုန်းများကို ပွင့်လင်းစွာ ဖော်ပြကာ ဖုံးကွယ်ထားသော အပိုကြေးများ မရှိစေရန် ရည်ရွယ်ပါသည်။" /></p>
-            <p><LocalizedText en="We are also planning for the future. After Thailand→Myanmar, we intend to expand to additional corridors, including Laos→Myanmar. Each new corridor will be launched with the same focus on compliance, transparency, and customer care." my="အနာဂတ်အတွက်လည်း စီစဉ်လျက်ရှိပါသည်။ ထိုင်းမှ မြန်မာသို့ ငွေလွှဲလမ်းကြောင်းပြီးနောက် လာအိုမှ မြန်မာသို့ အပါအဝင် အခြားလမ်းကြောင်းများသို့ တိုးချဲ့ရန် ရည်ရွယ်ထားပါသည်။ လမ်းကြောင်းအသစ်တိုင်းကို စည်းမျဉ်းလိုက်နာမှု၊ ပွင့်လင်းမြင်သာမှုနှင့် သုံးစွဲသူကို ဂရုစိုက်မှုတို့ကို အလေးထား၍ စတင်ဆောင်ရွက်ပါမည်။" /></p>
+            <p><LocalizedText en="Our name reflects what we believe a remittance service should be built on: reliability that customers can depend on, and trust earned through transparency, compliance, and care. Our remittance operator status was granted by the Central Bank of Myanmar (CBM) through Announcement Letter No. FE 1/343. We apply identity verification, transaction monitoring, and regulatory compliance measures across everything we do." my="ကျွန်ုပ်တို့၏ အမည်သည် ငွေလွှဲဝန်ဆောင်မှုတစ်ခုအတွက် အရေးကြီးသော အခြေခံတန်ဖိုးများကို ဖော်ပြပါသည်။ သုံးစွဲသူများ အားကိုးနိုင်သည့် ယုံကြည်စိတ်ချရမှု၊ ပွင့်လင်းမြင်သာမှု၊ စည်းမျဉ်းလိုက်နာမှုနှင့် ဂရုစိုက်မှုတို့ကို အခြေခံထားပါသည်။ ဗဟိုဘဏ် (CBM) ၏ ရုံးစာအမှတ် FE 1/343 နှင့် သက်ဆိုင်သော ခွင့်ပြုချက်ရရှိထားပြီး လုပ်ငန်းဆောင်ရွက်ရာတွင် ဖောက်သည်အထောက်အထားစိစစ်ခြင်း၊ ငွေလွှဲမှုစောင့်ကြည့်စစ်ဆေးခြင်းနှင့် စည်းမျဉ်းလိုက်နာမှုတို့ကို အလေးထားပါသည်။" /></p>
+            <p><LocalizedText en="Mingalarpar, our first service, is being built for the Thailand–Myanmar corridor — one of the most important remittance routes for Myanmar families. We are designing it as a mobile-first experience that makes sending money home simple to understand and convenient to use, with clear pricing and no hidden margins." my="ကျွန်ုပ်တို့၏ ပထမဆုံးဝန်ဆောင်မှုဖြစ်သော Mingalarpar ကို ထိုင်းနိုင်ငံမှ မြန်မာနိုင်ငံသို့ ငွေလွှဲပို့လိုသော မြန်မာမိသားစုများအတွက် စီစဉ်တည်ဆောက်နေပါသည်။ နေရပ်သို့ ငွေပို့ရာတွင် နားလည်ရလွယ်ကူပြီး အသုံးပြုရအဆင်ပြေစေရန် မိုဘိုင်းကို ဦးစားပေးသည့် ဝန်ဆောင်မှုအဖြစ် ရည်ရွယ်ထားပါသည်။ ငွေလွှဲမှုကို အတည်မပြုမီ သက်ဆိုင်ရာ ငွေလဲနှုန်းနှင့် ဝန်ဆောင်ခများကို ရှင်းလင်းစွာ ဖော်ပြပေးရန် ရည်ရွယ်ပါသည်။" /></p>
+            <p><LocalizedText en="We are also planning for the future. After Thailand→Myanmar, we intend to expand to additional corridors, including Laos→Myanmar. Each new corridor will be launched with the same focus on compliance, transparency, and customer care." my="အနာဂတ်တွင် ထိုင်းနိုင်ငံမှ မြန်မာနိုင်ငံသို့ ငွေလွှဲလမ်းကြောင်းအပြင် လာအိုနိုင်ငံမှ မြန်မာနိုင်ငံသို့ အပါအဝင် အခြားလမ်းကြောင်းများသို့ တိုးချဲ့ရန် ရည်ရွယ်ထားပါသည်။ လမ်းကြောင်းအသစ်တစ်ခုစီကို သက်ဆိုင်ရာ စည်းမျဉ်းများနှင့်အညီ၊ ပွင့်လင်းမြင်သာမှုနှင့် သုံးစွဲသူအကျိုးစီးပွားကို အလေးထား၍ အကောင်အထည်ဖော်သွားပါမည်။" /></p>
           </div>
         </div>
         <div className="mt-14 md:mt-16">
@@ -89,4 +89,3 @@ export default function AboutPage() {
     </main>
   );
 }
-

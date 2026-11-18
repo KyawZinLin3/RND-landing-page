@@ -80,4 +80,3 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "We couldn’t send your message right now. Please email us directly." }, { status: 502 });
   }
 }
-
