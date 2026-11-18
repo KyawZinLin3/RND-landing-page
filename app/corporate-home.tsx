@@ -16,7 +16,7 @@ import { faqsMy } from "@/lib/faqs-my";
 import { corridorStatusLabel, faqs, navigation, websiteSettings, type NewsPost } from "@/lib/website-content";
 
 const trustItems = [
-  { icon: <Landmark />, title: "CBM-granted remittance operator", text: "Granted by the Central Bank of Myanmar (CBM) through Announcement Letter No. FE 1/343." },
+  { icon: <Landmark />, title: "CBM-granted remittance operator", text: "Granted by the Central Bank of Myanmar (CBM) through Official Letter No. FE 1/343." },
   { icon: <Globe2 />, title: "A focused first corridor", text: "Our first planned remittance corridor connects Thailand and Myanmar." },
   { icon: <ScanFace />, title: "Identity verification", text: "The customer journey includes required identity verification." },
   { icon: <Headphones />, title: "Customer support", text: "Support information will be shared through confirmed service channels." },

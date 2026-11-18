@@ -46,7 +46,7 @@ export const websiteSettings = {
 
 export const faqs = [
   { question: "What is Mingalarpar?", answer: "Mingalarpar is the remittance service from Reliance and Trust Company Limited, being designed to help people send money home through a simple digital experience." },
-  { question: "Who operates Mingalarpar?", answer: "Mingalarpar is a service from Reliance and Trust Company Limited, which has remittance operator status granted by the Central Bank of Myanmar (CBM) through Announcement Letter No. FE 1/343." },
+  { question: "Who operates Mingalarpar?", answer: "Mingalarpar is a service from Reliance and Trust Company Limited, which has remittance operator status granted by the Central Bank of Myanmar (CBM) through Official Letter No. FE 1/343." },
   { question: "Which countries are supported?", answer: "Our first planned remittance corridor connects Thailand and Myanmar, sending Thai Baht (THB) from Thailand and paying out Myanmar Kyat (MMK) to recipients in Myanmar. We plan to expand to additional corridors, including Laos to Myanmar, in the future. Service availability will be announced when confirmed." },
   { question: "How do I register?", answer: "Registration information will be published when the Mingalarpar app is ready to launch." },
   { question: "What documents are required?", answer: "Identity verification will be required. The accepted documents and detailed steps will be shared before service launch." },
