@@ -66,7 +66,13 @@ export default function HowItWorksPage() {
             </article>
           ))}
         </div>
-        <div className="help-callout-panel relative mt-10 flex flex-col items-start justify-between gap-4 overflow-hidden rounded-[26px] p-6 sm:flex-row sm:items-center md:p-8">
+        <div
+          className="help-callout-panel relative mt-10 flex flex-col items-start justify-between gap-4 overflow-hidden rounded-[26px] p-6 sm:flex-row sm:items-center md:p-8"
+          style={{
+            background:
+              "radial-gradient(ellipse at 88% 8%, rgb(56 189 248 / .58), transparent 34%), radial-gradient(ellipse at 8% 100%, rgb(56 189 248 / .28), transparent 38%), linear-gradient(122deg, #1738d4 0%, #2545f4 50%, #1557dc 100%)",
+          }}
+        >
           <span aria-hidden="true" className="help-illustration" />
           <div className="help-callout-copy">
             <h2 className="text-lg font-extrabold"><LocalizedText en="Have more questions?" my="မေးစရာများ ရှိပါသလား။" /></h2>
