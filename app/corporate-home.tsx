@@ -326,7 +326,7 @@ function LanguageFlag({ code }: { code: "en" | "my" | "th" }) {
 }
 
 function SectionHeading({ title, text, id, titleClassName }: { title: string; text: string; id?: string; titleClassName?: string }) {
-  return <div className="section-heading mx-auto max-w-3xl text-center"><h2 id={id} className={`text-4xl font-extrabold leading-[1.06] tracking-[-.05em] sm:text-5xl md:text-[56px] ${titleClassName ?? ""}`}>{title}</h2><p className="mt-5 text-base leading-7 text-muted">{text}</p></div>;
+  return <div className={`section-heading mx-auto text-center ${titleClassName ? "max-w-5xl" : "max-w-3xl"}`}><h2 id={id} className={`text-4xl font-extrabold leading-[1.06] tracking-[-.05em] sm:text-5xl md:text-[56px] ${titleClassName ?? ""}`}>{title}</h2><p className="mt-5 text-base leading-7 text-muted">{text}</p></div>;
 }
 
 function InfoCard({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) {

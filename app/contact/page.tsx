@@ -25,7 +25,7 @@ export default function ContactPage() {
             </div>
           </div>
           <div className="contact-form-panel rounded-[28px] p-6 md:p-8">
-            <h2 className="text-xl font-extrabold"><LocalizedText en="Send us a message" my="ကျွန်ုပ်တို့ထံ စာပို့ရန်" /></h2>
+            <h2 className="contact-form-title text-xl font-extrabold"><LocalizedText en="Send us a message" my="ကျွန်ုပ်တို့ထံ စာပို့ရန်" /></h2>
             <p className="mt-2 text-sm leading-6 text-muted"><LocalizedText en="Choose a category so we can direct your message to the right team." my="သင့်စာကို သက်ဆိုင်ရာအဖွဲ့ထံ ပေးပို့နိုင်ရန် အမျိုးအစားတစ်ခုကို ရွေးချယ်ပါ။" /></p>
             <ContactForm />
           </div>

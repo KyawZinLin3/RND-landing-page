@@ -16,7 +16,8 @@
 html { scrollbar-width: none; -ms-overflow-style: none; }
 html::-webkit-scrollbar { display: none; }
 body { margin: 0; background: #f5faff; font-family: var(--font-manrope), sans-serif; }
-html[lang="my"] h1, html[lang="my"] h2, html[lang="my"] h3, main[lang="my"] h1, main[lang="my"] h2, main[lang="my"] h3 { line-height: 1.5; letter-spacing: normal; }
+html[lang="my"] h1, html[lang="my"] h2, html[lang="my"] h3, main[lang="my"] h1, main[lang="my"] h2, main[lang="my"] h3 { line-height: 1.6; letter-spacing: normal; }
+html[lang="my"] h1[class*="text-4xl"], html[lang="my"] h1[class*="text-5xl"], html[lang="my"] h1[class*="text-6xl"], html[lang="my"] h2[class*="text-3xl"], html[lang="my"] h2[class*="text-4xl"], html[lang="my"] h2[class*="text-5xl"], html[lang="my"] h2.contact-form-title { font-size: clamp(1.8rem, 3.7vw, 2.9rem); line-height: 1.6; letter-spacing: normal; }
 button, input, select { font: inherit; }
 .scroll-cue { bottom: max(1rem, env(safe-area-inset-bottom)); }
 @media (min-width: 768px) { .scroll-cue { bottom: 1.5rem; } }
@@ -32,9 +33,9 @@ button, input, select { font: inherit; }
 .hero-shell::before { content: ""; position: absolute; z-index: -1; width: 560px; height: 560px; right: -190px; top: 100px; border-radius: 50%; background: rgb(22 140 242 / .11); filter: blur(10px); }
 .hero-content { position: relative; }
 .home-hero-title-my { max-width: 20ch; font-size: clamp(1.8rem, 3.7vw, 2.9rem); line-height: 1.45; letter-spacing: 0; }
-.single-line-heading-my { white-space: nowrap; font-size: clamp(1rem, 3.4vw, 2.2rem); line-height: 1.5; letter-spacing: 0; }
-html[lang="my"] .how-it-works-title { white-space: nowrap; font-size: clamp(1rem, 3.4vw, 2.2rem); line-height: 1.5; letter-spacing: normal; }
-html[lang="my"] .about-values-heading-my { white-space: nowrap; font-size: clamp(.9rem, 2.6vw, 1.85rem); line-height: 1.5; letter-spacing: normal; }
+html[lang="my"] h2.single-line-heading-my { white-space: nowrap; font-size: clamp(1rem, 3.7vw, 2.9rem); line-height: 1.6; letter-spacing: normal; }
+html[lang="my"] h1.how-it-works-title { white-space: nowrap; font-size: clamp(1rem, 3.7vw, 2.9rem); line-height: 1.6; letter-spacing: normal; }
+html[lang="my"] h2.about-values-heading-my { white-space: nowrap; font-size: clamp(1rem, 3.7vw, 2.9rem); line-height: 1.6; letter-spacing: normal; }
 .network-strip { border-top: 1px solid rgb(17 19 21 / .06); border-bottom: 1px solid rgb(17 19 21 / .06); background: rgb(255 255 255 / .74); backdrop-filter: blur(12px); }
 .logo-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #071b3a; color: white; font-size: 10px; letter-spacing: -.04em; box-shadow: 0 7px 18px rgb(7 27 58 / .18); }
 .eyebrow { display: inline-flex; align-items: center; gap: 7px; border-radius: 999px; background: #e8f5ff; padding: 8px 12px; color: #0870d1; font-size: 11px; font-weight: 800; letter-spacing: .02em; }
