@@ -145,7 +145,7 @@ export default function CorporateHome() {
         <div className="hero-content mx-auto grid min-h-[610px] max-w-[1240px] grid-cols-1 items-center gap-12 px-6 py-16 md:grid-cols-[1.03fr_.97fr] md:px-10 md:py-20 lg:px-12">
           <div className="min-w-0 max-w-xl">
             
-            <h1 className="mt-5 text-[40px] font-extrabold leading-[1.15] tracking-[-.055em] sm:text-6xl md:text-[66px]">{isMyanmar ? "Mingalarpar ဖြင့် မိသားစုနှင့် ချစ်ခင်ရသူများထံသို့ ငွေလွှဲပို့နိုင်ပါသည်။" : <>Send Money Home <span className="text-coral">with Mingalarpar</span></>}</h1>
+            <h1 className={`mt-5 font-extrabold ${isMyanmar ? "home-hero-title-my" : "text-[40px] leading-[1.15] tracking-[-.055em] sm:text-6xl md:text-[66px]"}`}>{isMyanmar ? <><span className="text-coral">Mingalarpar</span> ဖြင့် မိသားစုနှင့် ချစ်ခင်ရသူများထံသို့ ငွေလွှဲပို့နိုင်ပါသည်။</> : <>Send Money Home <span className="text-coral">with Mingalarpar</span></>}</h1>
             <p className="mt-6 max-w-lg text-base leading-7 text-muted">{isMyanmar ? "ထိုင်းနိုင်ငံမှ မြန်မာနိုင်ငံသို့ ငွေလွှဲပို့နိုင်မည့် ရိုးရှင်းပြီး ယုံကြည်စိတ်ချရသော ဝန်ဆောင်မှုတစ်ခု ဖြစ်လာစေရန် ရည်ရွယ်ထားပါသည်။" : "A simple and trusted way to send money from Thailand to Myanmar."}</p>
             <div className="mt-8 flex flex-wrap gap-3">{isMyanmar ? <><Button variant="coral" size="lg" asChild><a href="#mingalarpar">Mingalarpar အား ပိုမိုသိရှိရန် <ArrowRight className="size-4" /></a></Button><Button variant="outline" size="lg" asChild><a href="#how-it-works">အလုပ်လုပ်ပုံ</a></Button></> : <><Button variant="coral" size="lg" asChild><a href="#mingalarpar">Explore Mingalarpar <ArrowRight className="size-4" /></a></Button><Button variant="outline" size="lg" asChild><a href="#how-it-works">How It Works</a></Button></>}</div>
             <div className="mt-10 inline-flex items-center gap-3 rounded-full border border-coral/10 bg-white/80 px-4 py-2.5 text-xs font-bold text-ink shadow-sm"><span className="size-8 shrink-0 overflow-hidden rounded-full"><CountryFlag country="Thailand" /></span><span>Thailand</span><MoveRight className="size-4 text-coral" /><span className="size-8 shrink-0 overflow-hidden rounded-full"><CountryFlag country="Myanmar" /></span><span>Myanmar</span></div>
@@ -194,7 +194,7 @@ export default function CorporateHome() {
       </section>
 
       <section id="corridors" className="section-wrap scroll-mt-8 py-20 md:py-24">
-        <SectionHeading title={isMyanmar ? "ထိုင်းနှင့် မြန်မာကို ချိတ်ဆက်ပေးခြင်း" : "Connecting Thailand and Myanmar"} text={isMyanmar ? "ပထမဆုံး ငွေလွှဲနိုင်ငံအဖြစ် ထိုင်းနိုင်ငံရှိ လုပ်သားများ အနေဖြင့် မြန်မာနိုင်ငံရှိ ၎င်းတို့၏ မိသားစုများနှင့် ချစ်ခင်ရသူများထံသို့ ငွေကြေးလွှဲပို့နိုင်ရန် အတွက်အဓိကထား ဆောင်ရွက်သွားမည်ဖြစ်ပါသည်။" : "Our first remittance corridor focuses on helping people in Thailand send money to their families and loved ones in Myanmar."} />
+        <SectionHeading title={isMyanmar ? "ထိုင်းနှင့် မြန်မာကို ချိတ်ဆက်ပေးခြင်း" : "Connecting Thailand and Myanmar"} titleClassName={isMyanmar ? "single-line-heading-my" : undefined} text={isMyanmar ? "ပထမဆုံး ငွေလွှဲနိုင်ငံအဖြစ် ထိုင်းနိုင်ငံရှိ လုပ်သားများ အနေဖြင့် မြန်မာနိုင်ငံရှိ ၎င်းတို့၏ မိသားစုများနှင့် ချစ်ခင်ရသူများထံသို့ ငွေကြေးလွှဲပို့နိုင်ရန် အတွက်အဓိကထား ဆောင်ရွက်သွားမည်ဖြစ်ပါသည်။" : "Our first remittance corridor focuses on helping people in Thailand send money to their families and loved ones in Myanmar."} />
         <div className="brand-card mx-auto mt-12 max-w-4xl rounded-[30px] p-6 md:p-10">
           <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
             <CountryCard country="Thailand" currency="Sending currency · THB" />
@@ -245,7 +245,7 @@ export default function CorporateHome() {
       </section>
 
       <section id="faq" className="section-wrap scroll-mt-8 py-20 md:py-24">
-        <SectionHeading title={isMyanmar ? "မကြာခဏ မေးလေ့ရှိသော မေးခွန်းများ" : "Frequently Asked Questions"} text={isMyanmar ? "Mingalarpar နှင့် စီစဉ်ထားသော ငွေလွှဲဝန်ဆောင်မှုအကြောင်း မေးလေ့ရှိသည့် မေးခွန်းများ၏ အဖြေများကို ဤနေရာတွင် ဖတ်ရှုနိုင်ပါသည်။" : "Answers about Mingalarpar and our planned remittance service."} />
+        <SectionHeading title={isMyanmar ? "မကြာခဏ မေးလေ့ရှိသော မေးခွန်းများ" : "Frequently Asked Questions"} titleClassName={isMyanmar ? "single-line-heading-my" : undefined} text={isMyanmar ? "Mingalarpar နှင့် စီစဉ်ထားသော ငွေလွှဲဝန်ဆောင်မှုအကြောင်း မေးလေ့ရှိသည့် မေးခွန်းများ၏ အဖြေများကို ဤနေရာတွင် ဖတ်ရှုနိုင်ပါသည်။" : "Answers about Mingalarpar and our planned remittance service."} />
         <Accordion type="single" collapsible className="mx-auto mt-10 grid max-w-3xl gap-3">{faqs.map((faq, index) => { const localizedFaq = faqsMy[index]; return <AccordionItem key={faq.question} value={`faq-${index}`}><AccordionTrigger>{isMyanmar ? localizedFaq.question : faq.question}</AccordionTrigger><AccordionContent>{isMyanmar ? localizedFaq.answer : faq.answer}</AccordionContent></AccordionItem>; })}</Accordion>
       </section>
 
@@ -325,8 +325,8 @@ function LanguageFlag({ code }: { code: "en" | "my" | "th" }) {
   );
 }
 
-function SectionHeading({ title, text, id }: { title: string; text: string; id?: string }) {
-  return <div className="section-heading mx-auto max-w-3xl text-center"><h2 id={id} className="text-4xl font-extrabold leading-[1.06] tracking-[-.05em] sm:text-5xl md:text-[56px]">{title}</h2><p className="mt-5 text-base leading-7 text-muted">{text}</p></div>;
+function SectionHeading({ title, text, id, titleClassName }: { title: string; text: string; id?: string; titleClassName?: string }) {
+  return <div className="section-heading mx-auto max-w-3xl text-center"><h2 id={id} className={`text-4xl font-extrabold leading-[1.06] tracking-[-.05em] sm:text-5xl md:text-[56px] ${titleClassName ?? ""}`}>{title}</h2><p className="mt-5 text-base leading-7 text-muted">{text}</p></div>;
 }
 
 function InfoCard({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) {

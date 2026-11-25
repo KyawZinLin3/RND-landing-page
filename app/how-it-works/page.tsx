@@ -46,7 +46,7 @@ export default function HowItWorksPage() {
       <SiteHeader activePage="how-it-works" />
       <section className="hero-shell">
         <div className="hero-content mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-16 md:grid-cols-[1fr_.9fr] md:px-8 md:py-20">
-          <div><h1 className="max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-[-.05em] sm:text-5xl md:text-6xl"><LocalizedText en="How It Works" my="ငွေလွှဲလုပ်ငန်းစဉ် အဆင့်များ" /></h1>
+          <div><h1 className="how-it-works-title max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-[-.05em] sm:text-5xl md:text-6xl"><LocalizedText en="How It Works" my="ငွေလွှဲလုပ်ငန်းစဉ် အဆင့်များ" /></h1>
           <p className="mt-6 max-w-2xl text-base leading-7 text-muted md:text-lg md:leading-8"><LocalizedText en="Three clear steps are planned for the Mingalarpar remittance journey. Final service details will be confirmed before launch." my="Mingalarpar ဖြင့် ငွေလွှဲရန် အဆင့်သုံးဆင့်ကို ရှင်းလင်းစွာ ဖော်ပြထားပါသည်။ ဝန်ဆောင်မှုအသေးစိတ်ကို စတင်မိတ်ဆက်မီ အတည်ပြုထုတ်ပြန်ပါမည်။" /></p></div>
           <PageHeroArt kind="how-it-works" />
         </div>

@@ -71,7 +71,7 @@ export default function AboutPage() {
         <div className="mt-14 md:mt-16">
           <div className="mx-auto max-w-3xl text-center">
             <p className="about-kicker"><LocalizedText en="What guides us" my="ကျွန်ုပ်တို့ကို လမ်းညွှန်ပေးသော တန်ဖိုးများ" /></p>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-[-.04em] sm:text-4xl"><LocalizedText en="Built around what matters" my="အရေးကြီးသောအရာများကို အခြေခံတည်ဆောက်ထားပါသည်" /></h2>
+            <h2 className="about-values-heading-my mt-3 text-3xl font-extrabold tracking-[-.04em] sm:text-4xl"><LocalizedText en="Built around what matters" my="အရေးကြီးသောအရာများကို အခြေခံတည်ဆောက်ထားပါသည်" /></h2>
           </div>
           <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {companyPrinciples.map((principle) => (
