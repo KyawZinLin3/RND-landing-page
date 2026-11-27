@@ -342,18 +342,18 @@ function TransferCalculator() {
   const receivedAmount = canCalculate ? Math.round(numericAmount * 128) : null;
   const formatAmount = (amount: number) => new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(amount);
 
-  return <div className="brand-card rounded-[24px] p-6" aria-label="Illustrative transfer calculator">
-    <div className="flex items-center justify-between"><h3 className="font-extrabold">Transfer estimate</h3><Banknote className="text-coral" /></div>
+  return <div className="estimate-card brand-card w-full min-w-0 rounded-[24px] p-4 sm:p-6" aria-label="Illustrative transfer calculator">
+    <div className="estimate-card-header flex items-center justify-between gap-3"><h3 className="text-lg font-extrabold">Transfer estimate</h3><span className="estimate-card-icon grid size-10 shrink-0 place-items-center rounded-xl"><Banknote aria-hidden="true" className="size-5 text-coral" /></span></div>
     <label htmlFor="estimate-thb" className="mt-5 block text-[10px] font-bold text-muted">You send</label>
-    <div className="estimate-input-wrap mt-2 flex items-center gap-3 rounded-2xl px-4">
-      <input id="estimate-thb" name="estimate-thb" type="number" min="1000" step="any" inputMode="decimal" value={sendAmount} onChange={(event) => setSendAmount(event.target.value)} className="estimate-input min-w-0 flex-1 bg-transparent text-2xl font-extrabold outline-none" aria-describedby="estimate-minimum" />
-      <span className="estimate-currency rounded-full px-3 py-1.5 text-xs font-extrabold">THB</span>
+    <div className="estimate-input-wrap mt-2 flex min-w-0 items-center gap-2 rounded-2xl px-3 sm:gap-3 sm:px-4">
+      <input id="estimate-thb" name="estimate-thb" type="number" min="1000" step="any" inputMode="decimal" value={sendAmount} onChange={(event) => setSendAmount(event.target.value)} className="estimate-input min-w-0 flex-1 bg-transparent text-xl font-extrabold outline-none sm:text-2xl" aria-describedby="estimate-minimum" />
+      <span className="estimate-currency shrink-0 rounded-full px-3 py-1.5 text-xs font-extrabold">THB</span>
     </div>
     <p id="estimate-minimum" aria-live="polite" className={`estimate-minimum mt-2 text-xs font-semibold ${canCalculate ? "" : "estimate-minimum-error"}`}>{canCalculate ? "Minimum send amount: 1,000 THB." : "Enter at least 1,000 THB to calculate."}</p>
     <div className="my-3 flex items-center justify-center gap-2 text-[10px] font-bold text-muted"><span className="h-px flex-1 bg-black/10" />Illustrative estimate<span className="h-px flex-1 bg-black/10" /></div>
-    <div className="estimate-result rounded-2xl p-4" aria-live="polite"><p className="text-[10px] font-bold">Recipient gets (estimate)</p><div className="mt-2 flex items-center justify-between gap-2"><strong className="min-w-0 break-all text-2xl font-extrabold">{receivedAmount === null ? "—" : formatAmount(receivedAmount)}</strong><span className="estimate-currency rounded-full px-3 py-1.5 text-xs font-extrabold">MMK</span></div></div>
+    <div className="estimate-result rounded-2xl p-4" aria-live="polite"><p className="text-[10px] font-bold">Recipient gets (estimate)</p><div className="mt-2 flex min-w-0 items-center justify-between gap-2"><strong className="estimate-value min-w-0 break-all font-extrabold">{receivedAmount === null ? "—" : formatAmount(receivedAmount)}</strong><span className="estimate-currency shrink-0 rounded-full px-3 py-1.5 text-xs font-extrabold">MMK</span></div></div>
     <div className="estimate-rate mt-4 flex flex-wrap items-center justify-between gap-2 rounded-xl px-3 py-2.5 text-xs"><span>Illustrative rate</span><strong>1 THB = 128 MMK</strong><span className="estimate-unconfirmed rounded-full px-2 py-1 text-[9px] font-extrabold uppercase tracking-wide">Unconfirmed</span></div>
-    <p className="mt-3 text-center text-[10px] leading-5 text-muted">This estimate uses an unconfirmed rate and excludes any transfer fee. Final pricing will be shown before a transfer is confirmed.</p>
+    <p className="estimate-disclaimer mt-3 text-center text-[10px] leading-5 text-muted">This estimate uses an unconfirmed rate and excludes any transfer fee. Final pricing will be shown before a transfer is confirmed.</p>
   </div>;
 }
 

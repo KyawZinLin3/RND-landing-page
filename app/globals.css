@@ -189,6 +189,7 @@ main#top .know-panel { position: relative; isolation: isolate; overflow: hidden;
 .know-panel .brand-card p { color: #49627e; }
 .know-panel .brand-card [class~="bg-soft"] { background: linear-gradient(135deg, #dce7ff, #d9f2ff); }
 .estimate-input-wrap { min-height: 64px; border: 1px solid rgb(37 69 244 / .2); background: linear-gradient(135deg, #e8f1ff, #e6f7ff); box-shadow: inset 0 1px 2px rgb(23 56 212 / .06); transition: border-color .2s, box-shadow .2s; }
+.estimate-card-icon { background: linear-gradient(145deg, #e5edff, #d9f2ff); }
 .estimate-input-wrap:focus-within { border-color: #2545f4; box-shadow: 0 0 0 3px rgb(56 189 248 / .2); }
 .estimate-input { color: #102d69; font-variant-numeric: tabular-nums; appearance: textfield; }
 .estimate-input::-webkit-inner-spin-button, .estimate-input::-webkit-outer-spin-button { appearance: none; margin: 0; }
@@ -198,6 +199,12 @@ main#top .know-panel { position: relative; isolation: isolate; overflow: hidden;
 .estimate-rate strong { color: #1738d4; }
 .estimate-unconfirmed { background: #fff; color: #744d0f; }
 .know-panel .estimate-minimum-error { color: #a43749; }
+@media (max-width: 639px) {
+  .estimate-rate { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+  .estimate-rate strong { grid-column: 1 / -1; grid-row: 2; }
+  .estimate-value { overflow-wrap: anywhere; font-size: clamp(1.2rem, 6vw, 1.5rem); }
+  .estimate-disclaimer { font-size: 11px; line-height: 1.65; }
+}
 main#top .pocket-panel { position: relative; isolation: isolate; border: 1px solid rgb(255 255 255 / .22); background: radial-gradient(circle at 84% 24%, #7dd3fc 0, transparent 31%), linear-gradient(120deg, #1738d4 0%, #2545f4 48%, #38bdf8 100%); box-shadow: 0 26px 70px rgb(37 69 244 / .24); }
 .pocket-orbit { position: absolute; z-index: 0; inset: 0; overflow: hidden; background-image: radial-gradient(circle at 10% 20%, rgb(255 255 255 / .95) 1px, transparent 1.8px), radial-gradient(circle at 73% 22%, rgb(255 255 255 / .9) 1.5px, transparent 2.3px), radial-gradient(circle at 62% 78%, rgb(255 255 255 / .85) 1px, transparent 1.8px), radial-gradient(circle at 93% 66%, rgb(255 255 255 / .8) 1px, transparent 1.8px), radial-gradient(circle at 34% 88%, rgb(255 255 255 / .8) 1px, transparent 1.8px); pointer-events: none; }
 .pocket-orbit::before { position: absolute; top: 50%; right: 7%; width: min(38vw, 350px); aspect-ratio: 1; border: 1px solid rgb(255 255 255 / .22); border-radius: 50%; background: radial-gradient(circle at 32% 28%, rgb(255 255 255 / .78), rgb(125 211 252 / .52) 18%, rgb(37 69 244 / .38) 63%, rgb(23 56 212 / .12)); box-shadow: 0 0 0 16px rgb(255 255 255 / .045), 0 0 80px rgb(125 211 252 / .22); content: ""; transform: translateY(-50%); }

@@ -93,9 +93,11 @@ const vacanciesMy: Vacancy[] = [
 
 const applicationEmail = "remittance@relianceandtrustmm.com";
 
-function applicationHref(title: string) {
-  const subject = encodeURIComponent(`Application: ${title}`);
-  const body = encodeURIComponent(`Hello Reliance & Trust team,\n\nI would like to apply for the ${title} position. Please find my CV and supporting information attached.\n\nName:\nPhone number:\n\nThank you.`);
+function applicationHref(title: string, isMyanmar: boolean) {
+  const subject = encodeURIComponent(isMyanmar ? `လျှောက်လွှာ: ${title}` : `Application: ${title}`);
+  const body = encodeURIComponent(isMyanmar
+    ? `မင်္ဂလာပါ Reliance & Trust အဖွဲ့၊\n\n${title} ရာထူးအတွက် လျှောက်ထားလိုပါသည်။ ကျွန်ုပ်၏ CV နှင့် လိုအပ်သော အချက်အလက်များကို ပူးတွဲပေးပို့ထားပါသည်။\n\nအမည်:\nဖုန်းနံပါတ်:\n\nကျေးဇူးတင်ပါသည်။`
+    : `Hello Reliance & Trust team,\n\nI would like to apply for the ${title} position. Please find my CV and supporting information attached.\n\nName:\nPhone number:\n\nThank you.`);
   return `mailto:${applicationEmail}?subject=${subject}&body=${body}`;
 }
 
@@ -109,6 +111,11 @@ export default function CareerListings() {
     const dialog = dialogRef.current;
     if (selectedVacancy && dialog && !dialog.open) dialog.showModal();
   }, [selectedVacancy]);
+
+  const selectedVacancyIndex = selectedVacancy ? vacancies.findIndex((vacancy) => vacancy.title === selectedVacancy.title) : -1;
+  const displaySelectedVacancy = selectedVacancy
+    ? (isMyanmar ? vacanciesMy[selectedVacancyIndex] : selectedVacancy)
+    : null;
 
   return <>
     <div className="career-listings grid gap-5 md:grid-cols-2">
@@ -135,26 +142,26 @@ export default function CareerListings() {
       {selectedVacancy && <>
         <header className="career-drawer-header">
           <div>
-            <p className="career-drawer-kicker">{(isMyanmar ? vacanciesMy[vacancies.findIndex((vacancy) => vacancy.title === selectedVacancy.title)] : selectedVacancy).category} · {isMyanmar ? "အချိန်ပြည့်" : "Full-time"}</p>
-            <h2 id="career-drawer-title">{(isMyanmar ? vacanciesMy[vacancies.findIndex((vacancy) => vacancy.title === selectedVacancy.title)] : selectedVacancy).title}</h2>
-            <p className="career-drawer-location">{(isMyanmar ? vacanciesMy[vacancies.findIndex((vacancy) => vacancy.title === selectedVacancy.title)] : selectedVacancy).location}</p>
+            <p className="career-drawer-kicker">{displaySelectedVacancy?.category} · {isMyanmar ? "အချိန်ပြည့်" : "Full-time"}</p>
+            <h2 id="career-drawer-title">{displaySelectedVacancy?.title}</h2>
+            <p className="career-drawer-location">{displaySelectedVacancy?.location}</p>
           </div>
-          <button type="button" className="career-drawer-close" aria-label="Close vacancy details" onClick={() => dialogRef.current?.close()}><X aria-hidden="true" className="size-5" /></button>
+          <button type="button" className="career-drawer-close" aria-label={isMyanmar ? "ရာထူးအသေးစိတ်ကို ပိတ်ရန်" : "Close vacancy details"} onClick={() => dialogRef.current?.close()}><X aria-hidden="true" className="size-5" /></button>
         </header>
         <div className="career-drawer-body">
-          <p className="career-drawer-summary">{(isMyanmar ? vacanciesMy[vacancies.findIndex((vacancy) => vacancy.title === selectedVacancy.title)] : selectedVacancy).summary}</p>
+          <p className="career-drawer-summary">{displaySelectedVacancy?.summary}</p>
           <section>
             <h3>{isMyanmar ? "သင်လုပ်ဆောင်ရမည့်တာဝန်များ" : "What you will do"}</h3>
-            <ul>{(isMyanmar ? vacanciesMy[vacancies.findIndex((vacancy) => vacancy.title === selectedVacancy.title)] : selectedVacancy).responsibilities.map((item) => <li key={item}><span className="career-list-check" aria-hidden="true">✓</span>{item}</li>)}</ul>
+            <ul>{displaySelectedVacancy?.responsibilities.map((item) => <li key={item}><span className="career-list-check" aria-hidden="true">✓</span>{item}</li>)}</ul>
           </section>
           <section>
             <h3>{isMyanmar ? "လိုအပ်သော အရည်အချင်းများ" : "What we look for"}</h3>
-            <ul>{(isMyanmar ? vacanciesMy[vacancies.findIndex((vacancy) => vacancy.title === selectedVacancy.title)] : selectedVacancy).qualifications.map((item) => <li key={item}><span className="career-list-check" aria-hidden="true">✓</span>{item}</li>)}</ul>
+            <ul>{displaySelectedVacancy?.qualifications.map((item) => <li key={item}><span className="career-list-check" aria-hidden="true">✓</span>{item}</li>)}</ul>
           </section>
         </div>
         <footer className="career-drawer-footer">
           <div><p className="text-sm font-extrabold text-ink">{isMyanmar ? "လျှောက်ထားရန် အသင့်ဖြစ်ပြီလား။" : "Ready to apply?"}</p><p className="mt-1 text-xs text-muted">{isMyanmar ? "လျှောက်လွှာနှင့် CV ကို ဤအီးမေးလ်သို့ ပေးပို့ပါ" : "Email your application and CV to"} {applicationEmail}</p></div>
-          <a className="career-apply-button inline-flex shrink-0 items-center gap-2 rounded-full px-5 py-3 text-sm font-extrabold" href={applicationHref(selectedVacancy.title)}>{isMyanmar ? "အီးမေးလ်ဖြင့် လျှောက်ထားရန်" : "Apply by email"} <ArrowRight aria-hidden="true" className="size-4" /></a>
+          <a className="career-apply-button inline-flex shrink-0 items-center gap-2 rounded-full px-5 py-3 text-sm font-extrabold" href={applicationHref(displaySelectedVacancy?.title ?? selectedVacancy.title, isMyanmar)}>{isMyanmar ? "အီးမေးလ်ဖြင့် လျှောက်ထားရန်" : "Apply by email"} <ArrowRight aria-hidden="true" className="size-4" /></a>
         </footer>
       </>}
     </dialog>
