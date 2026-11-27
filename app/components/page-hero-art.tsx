@@ -127,7 +127,7 @@ function AboutVisual() {
   return <div className="relative mt-6 grid min-h-[220px] place-items-center overflow-hidden rounded-[24px] bg-soft p-5">
     <div aria-hidden="true" className="absolute size-48 rounded-full border border-coral/15" /><div aria-hidden="true" className="absolute size-36 rounded-full border border-[#168cf2]/20" /><div aria-hidden="true" className="absolute h-px w-[75%] rotate-[-24deg] bg-coral/20" /><div aria-hidden="true" className="absolute h-px w-[75%] rotate-[24deg] bg-[#168cf2]/20" />
     <div className="relative z-10 grid min-h-20 min-w-36 place-items-center rounded-2xl border border-white/90 bg-white px-5 py-4 shadow-xl shadow-ink/10">
-      <img src="/rt-logo.svg" alt="" className="h-12 w-auto max-w-40 object-contain" />
+      <img src="/mingalarpar-logo-transparent.png" alt="Mingalarpar" className="size-12 object-contain" />
     </div>
     <span className="absolute left-[12%] top-[20%] grid size-11 place-items-center rounded-2xl bg-white text-coral shadow-md"><BadgeCheck className="size-5" /></span><span className="absolute right-[12%] top-[22%] grid size-11 place-items-center rounded-2xl bg-white text-[#0870d1] shadow-md"><ShieldCheck className="size-5" /></span><span className="absolute bottom-[12%] grid size-11 place-items-center rounded-2xl bg-white text-coral shadow-md"><UserRound className="size-5" /></span>
     <p className="absolute bottom-4 left-4 rounded-full bg-white/85 px-3 py-1.5 text-[9px] font-extrabold text-muted">Trust · Care · Connection</p>

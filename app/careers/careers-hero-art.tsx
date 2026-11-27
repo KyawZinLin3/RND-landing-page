@@ -12,7 +12,7 @@ export default function CareersHeroArt() {
       className="careers-hr-image"
     />
     <div className="careers-hiring-badge">
-      <span className="careers-hiring-logo"><Image src="/rt-logo.svg" alt="Reliance and Trust" width={48} height={48} /></span>
+      <span className="careers-hiring-logo"><Image src="/mingalarpar-logo-transparent.png" alt="Mingalarpar" width={48} height={48} /></span>
       <span className="careers-hiring-copy"><small>R&amp;T Careers</small><strong>We’re hiring</strong><span>Join our team</span></span>
     </div>
   </div>;

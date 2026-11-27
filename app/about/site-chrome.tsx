@@ -30,7 +30,7 @@ export function SiteHeader({ activePage }: { activePage: "about" | "news" | "car
         <header className="fixed inset-x-0 top-3 z-[100] mx-auto w-full max-w-[1280px] px-4 md:px-7">
           <div className="mx-auto flex min-h-[68px] max-w-[1280px] items-center justify-between gap-3 rounded-2xl border border-[#dce5ee] bg-white/95 px-4 shadow-[0_10px_32px_rgba(7,27,58,.16)] backdrop-blur-xl md:px-6">
             <Link href="/#top" aria-label="Reliance and Trust home" className="flex shrink-0 items-center gap-2 font-extrabold tracking-tight">
-              <img src="/rt-logo.svg" alt="Reliance &amp; Trust" className="h-10 w-auto object-contain" />
+              <img src="/mingalarpar-logo-transparent.png" alt="Mingalarpar" className="h-10 w-10 object-contain" />
             </Link>
             <nav aria-label="Main navigation" className={`hidden items-center gap-y-2 font-bold lg:flex ${isMyanmar ? "gap-x-1 text-[11px] xl:gap-x-2.5 xl:text-xs" : "gap-x-2.5 text-xs xl:gap-x-4 xl:text-[13px]"}`}>
               {navigation.map((item) => {
@@ -67,7 +67,7 @@ export function SiteFooter() {
     <footer id="contact" className="section-wrap scroll-mt-8 pb-7">
       <div id="legal" className="site-footer-panel rounded-[30px] px-7 py-10 text-white md:px-12 md:py-14">
         <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
-          <div><Link href="/#top" className="flex items-center gap-2 font-extrabold"><span className="footer-brand-logo"><img src="/rt-logo.svg" alt="" /></span><span>Reliance &amp; Trust</span></Link><p className="footer-copy mt-4 max-w-xs text-sm leading-6">{isMyanmar ? "Reliance and Trust Company Limited — လူပုဂ္ဂိုလ်များနှင့် လူမှုအသိုင်းအဝိုင်းများကို ချိတ်ဆက်ပေးမည့် ငွေလွှဲဝန်ဆောင်မှုများကို တည်ဆောက်နေပါသည်။" : "Reliance and Trust Company Limited — building remittance services that connect people and communities."}</p><FooterContactDetails /></div>
+          <div><Link href="/#top" className="flex items-center gap-2 font-extrabold"><span className="footer-brand-logo"><img src="/mingalarpar-logo-transparent.png" alt="" /></span><span>Reliance &amp; Trust</span></Link><p className="footer-copy mt-4 max-w-xs text-sm leading-6">{isMyanmar ? "Reliance and Trust Company Limited — လူပုဂ္ဂိုလ်များနှင့် လူမှုအသိုင်းအဝိုင်းများကို ချိတ်ဆက်ပေးမည့် ငွေလွှဲဝန်ဆောင်မှုများကို တည်ဆောက်နေပါသည်။" : "Reliance and Trust Company Limited — building remittance services that connect people and communities."}</p><FooterContactDetails /></div>
           <FooterCol title="Company" links={[["About Us", "/about"], ["Careers", "/careers"], ["News", "/news"], ["Contact Us", "/contact"]]} />
           <FooterCol title="Mingalarpar" links={[["Mingalarpar App", "/mingalarpar"], ["How It Works", "/how-it-works"], ["Thailand → Myanmar", "/#corridors"], ["Future Corridors", "/#corridors"]]} />
           <FooterCol title="Support" links={[["Help Center", "/help"], ["FAQ", "/help"], ["Contact Support", "/contact"], ["Complaints", "/contact"]]} />

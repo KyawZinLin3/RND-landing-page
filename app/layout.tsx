@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Reliance and Trust | Mingalarpar Remittance",
   description: "Discover Mingalarpar, the planned remittance service from Reliance and Trust Company Limited, focused on connecting Thailand and Myanmar.",
   icons: {
-    icon: "/rt-logo.svg",
+    icon: "/mingalarpar-logo-transparent.png",
   },
   openGraph: {
     title: "Reliance and Trust | Mingalarpar Remittance",
@@ -39,7 +39,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 name: "Reliance and Trust Company Limited",
                 alternateName: "Reliance & Trust",
                 url: siteUrl,
-                logo: `${siteUrl}/rt-logo.svg`,
+                logo: `${siteUrl}/mingalarpar-logo-transparent.png`,
                 description: "Reliance and Trust Company Limited is developing Mingalarpar, a planned remittance service focused on the Thailand–Myanmar corridor.",
                 brand: { "@type": "Brand", name: "Mingalarpar" },
               }).replace(/</g, "\\u003c"),

@@ -121,7 +121,7 @@ export default function CorporateHome() {
         <header className="fixed inset-x-0 top-3 z-[100] mx-auto w-full max-w-[1280px] px-4 md:px-7">
           <div className="mx-auto flex min-h-[68px] max-w-[1280px] items-center justify-between gap-3 rounded-2xl border border-[#dce5ee] bg-white/95 px-4 shadow-[0_10px_32px_rgba(7,27,58,.16)] backdrop-blur-xl md:px-6">
             <a href="#top" aria-label="Reliance and Trust home" className="flex shrink-0 items-center gap-2 font-extrabold tracking-tight">
-              <img src="/rt-logo.svg" alt="Reliance &amp; Trust" className="h-10 w-auto object-contain" />
+              <img src="/mingalarpar-logo-transparent.png" alt="Mingalarpar" className="h-10 w-10 object-contain" />
             </a>
             <nav aria-label="Main navigation" className="hidden items-center gap-x-2.5 gap-y-2 text-xs font-bold lg:flex xl:gap-x-4 xl:text-[13px]">
               {navigation.map((item) => <a key={item.label} aria-current={activeSection === item.href ? "location" : undefined} onClick={() => setActiveSection(item.href)} className={`nav-link whitespace-nowrap transition-colors hover:text-coral ${isMyanmar ? "text-[11px] xl:text-xs" : ""}`} href={item.href}>{isMyanmar ? myanmarNavigationLabels[item.label] : item.label}</a>)}
@@ -260,7 +260,7 @@ export default function CorporateHome() {
       <footer id="contact" className="section-wrap scroll-mt-8 pb-7">
         <div id="legal" className="site-footer-panel rounded-[30px] px-7 py-10 text-white md:px-12 md:py-14">
           <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
-            <div><a href="#top" className="flex items-center gap-2 font-extrabold"><span className="footer-brand-logo"><img src="/rt-logo.svg" alt="" /></span><span>Reliance &amp; Trust</span></a><p className="footer-copy mt-4 max-w-xs text-sm leading-6">Reliance and Trust Company Limited — building remittance services that connect people and communities.</p><FooterContactDetails /></div>
+            <div><a href="#top" className="flex items-center gap-2 font-extrabold"><span className="footer-brand-logo"><img src="/mingalarpar-logo-transparent.png" alt="" /></span><span>Reliance &amp; Trust</span></a><p className="footer-copy mt-4 max-w-xs text-sm leading-6">Reliance and Trust Company Limited — building remittance services that connect people and communities.</p><FooterContactDetails /></div>
             <FooterCol title="Company" links={[["About Us", "/about"], ["Careers", "/careers"], ["News", "/news"], ["Contact Us", "/contact"]]} />
             <FooterCol title="Mingalarpar" links={[["Mingalarpar App", "/mingalarpar"], ["How It Works", "/how-it-works"], ["Thailand → Myanmar", "#corridors"], ["Future Corridors", "#corridors"]]} />
             <FooterCol title="Support" links={[["Help Center", "/help"], ["FAQ", "/help"], ["Contact Support", "/contact"], ["Complaints", "/contact"]]} />
