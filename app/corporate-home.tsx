@@ -300,8 +300,8 @@ function LanguageFlag({ code }: { code: "en" | "my" | "th" }) {
       {isMyanmar ? (
         <>
           <rect width="36" height="8" fill="#FECB00" />
-          <rect y="8" width="36" height="8" fill="#EA2839" />
-          <rect y="16" width="36" height="8" fill="#34B233" />
+          <rect y="8" width="36" height="8" fill="#34B233" />
+          <rect y="16" width="36" height="8" fill="#EA2839" />
           <path d="m18 3.2 2.8 5.8 6.4.9-4.6 4.5 1.1 6.4-5.7-3-5.7 3 1.1-6.4-4.6-4.5 6.4-.9L18 3.2Z" fill="white" />
         </>
       ) : isThai ? (
