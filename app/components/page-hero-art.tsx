@@ -76,7 +76,7 @@ function TransferVisual() {
   return <div className="relative mt-6 rounded-[24px] bg-soft p-5 sm:p-6">
     <div className="flex items-center justify-center gap-4 sm:gap-7">
       <div className="flex flex-col items-center gap-2"><span className="block w-[76px] overflow-hidden rounded-xl border-[3px] border-white bg-white shadow-md"><ThailandFlag /></span><span className="text-[11px] font-extrabold text-ink">Thailand</span></div>
-      <span aria-hidden="true" className="grid size-10 shrink-0 place-items-center rounded-full bg-white text-coral shadow-sm"><ArrowRight className="size-5" /></span>
+      <span aria-hidden="true" className="grid size-10 shrink-0 place-items-center rounded-full bg-white text-coral shadow-sm"><TransferArrows className="size-6" /></span>
       <div className="flex flex-col items-center gap-2"><span className="block w-[76px] overflow-hidden rounded-xl border-[3px] border-white bg-white shadow-md"><MyanmarFlag /></span><span className="text-[11px] font-extrabold text-ink">Myanmar</span></div>
     </div>
     <div className="mt-5 grid grid-cols-3 gap-2">
@@ -84,6 +84,12 @@ function TransferVisual() {
     </div>
     <p className="mt-4 text-center text-[10px] font-semibold text-muted">Planned journey · details coming soon</p>
   </div>;
+}
+
+function TransferArrows({ className = "" }: { className?: string }) {
+  return <svg aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M4 10h23m0 0-5-5m5 5-5 5M28 22H5m0 0 5-5m-5 5 5 5" />
+  </svg>;
 }
 
 function ThailandFlag() {

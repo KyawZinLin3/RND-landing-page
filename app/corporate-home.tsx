@@ -5,7 +5,7 @@ import Image from "next/image";
 import {
   ArrowDownLeft, ArrowRight, BadgeCheck, Banknote, BriefcaseBusiness, Check,
   ChevronDown, ChevronRight, CircleHelp, ClipboardCheck, Globe2, Headphones, Landmark,
-  Menu, MoveRight, ScanFace, ShieldCheck, Smartphone, WalletCards, X,
+  Menu, ScanFace, ShieldCheck, Smartphone, WalletCards, X,
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
@@ -148,7 +148,7 @@ export default function CorporateHome() {
             <h1 className={`mt-5 font-extrabold ${isMyanmar ? "home-hero-title-my" : "text-[40px] leading-[1.15] tracking-[-.055em] sm:text-6xl md:text-[66px]"}`}>{isMyanmar ? <><span className="text-coral">Mingalarpar</span> ဖြင့် မိသားစုနှင့် ချစ်ခင်ရသူများထံသို့ ငွေလွှဲပို့နိုင်ပါသည်။</> : <>Send Money Home <span className="text-coral">with Mingalarpar</span></>}</h1>
             <p className="mt-6 max-w-lg text-base leading-7 text-muted">{isMyanmar ? "ထိုင်းနိုင်ငံမှ မြန်မာနိုင်ငံသို့ ငွေလွှဲပို့နိုင်မည့် ရိုးရှင်းပြီး ယုံကြည်စိတ်ချရသော ဝန်ဆောင်မှုတစ်ခု ဖြစ်လာစေရန် ရည်ရွယ်ထားပါသည်။" : "A simple and trusted way to send money from Thailand to Myanmar."}</p>
             <div className="mt-8 flex flex-wrap gap-3">{isMyanmar ? <><Button variant="coral" size="lg" asChild><a href="#mingalarpar">Mingalarpar အား ပိုမိုသိရှိရန် <ArrowRight className="size-4" /></a></Button><Button variant="outline" size="lg" asChild><a href="#how-it-works">အလုပ်လုပ်ပုံ</a></Button></> : <><Button variant="coral" size="lg" asChild><a href="#mingalarpar">Explore Mingalarpar <ArrowRight className="size-4" /></a></Button><Button variant="outline" size="lg" asChild><a href="#how-it-works">How It Works</a></Button></>}</div>
-            <div className="mt-10 inline-flex items-center gap-3 rounded-full border border-coral/10 bg-white/80 px-4 py-2.5 text-xs font-bold text-ink shadow-sm"><span className="size-8 shrink-0 overflow-hidden rounded-full"><CountryFlag country="Thailand" /></span><span>Thailand</span><MoveRight className="size-4 text-coral" /><span className="size-8 shrink-0 overflow-hidden rounded-full"><CountryFlag country="Myanmar" /></span><span>Myanmar</span></div>
+            <div className="mt-10 inline-flex items-center gap-3 rounded-full border border-coral/10 bg-white/80 px-4 py-2.5 text-xs font-bold text-ink shadow-sm"><span className="size-8 shrink-0 overflow-hidden rounded-full"><CountryFlag country="Thailand" /></span><span>Thailand</span><TransferArrows className="h-5 w-8 text-coral" /><span className="size-8 shrink-0 overflow-hidden rounded-full"><CountryFlag country="Myanmar" /></span><span>Myanmar</span></div>
           </div>
           <div className="relative mx-auto w-full max-w-[520px]">
             <div className="absolute inset-6 rounded-full bg-coral/10 blur-3xl" aria-hidden="true" />
@@ -198,7 +198,7 @@ export default function CorporateHome() {
         <div className="brand-card mx-auto mt-12 max-w-4xl rounded-[30px] p-6 md:p-10">
           <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
             <CountryCard country="Thailand" currency="Sending currency · THB" />
-            <div className="flex flex-col items-center gap-2 text-coral"><MoveRight className="hidden size-8 sm:block" /><span className="rounded-full bg-soft px-4 py-2 text-xs font-extrabold">THB → MMK</span><MoveRight className="size-6 rotate-90 sm:hidden" /></div>
+            <div className="flex flex-col items-center gap-2 text-coral"><TransferArrows className="hidden h-8 w-12 sm:block" /><span className="rounded-full bg-soft px-4 py-2 text-xs font-extrabold">THB ⇄ MMK</span><TransferArrows className="h-8 w-12 rotate-90 sm:hidden" /></div>
             <CountryCard country="Myanmar" currency="Receiving currency · MMK" />
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2 border-t border-black/5 pt-6 text-[11px] text-muted"><span className="font-bold">Corridor status</span><span className="rounded-full bg-soft px-3 py-1.5 font-extrabold text-coral">{corridorStatusLabel(websiteSettings.corridors[0].status)}</span><span>· availability will be announced when confirmed</span></div>
@@ -359,6 +359,16 @@ function TransferCalculator() {
 
 function StepCard({ number, icon, title, text }: { number: string; icon: React.ReactNode; title: string; text: string }) {
   return <article className="steps-card relative rounded-[26px] border p-7"><div className="flex items-center justify-between"><span className="steps-icon grid size-12 place-items-center rounded-2xl">{icon}</span><span className="steps-number text-sm font-extrabold tracking-widest">{number}</span></div><h3 className="steps-title mt-7 text-xl font-extrabold">{title}</h3><p className="steps-copy mt-3 text-sm leading-6">{text}</p></article>;
+}
+
+function TransferArrows({ className = "" }: { className?: string }) {
+  return <svg aria-hidden="true" viewBox="0 0 32 24" fill="none" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M3 7h25m0 0-5-5m5 5-5 5M29 17H4m0 0 5-5m-5 5 5 5" />
+  </svg>;
+}
+
+function MoveRight({ className = "" }: { className?: string }) {
+  return <TransferArrows className={className} />;
 }
 
 function CountryCard({ country, currency }: { country: string; currency: string }) {
